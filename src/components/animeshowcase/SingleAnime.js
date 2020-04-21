@@ -1,21 +1,24 @@
 import React, { useState, useEffect } from "react";
 
-const SingleAnime = ({ match }) => {
-  const id = match.params.id;
-  const [animeData, setAnimeData] = useState({});
-  useEffect(() => {
-    fetch(`https://kitsu.io/api/edge/anime/${id}`)
-      .then((res) => res.json())
-      .then((newData) => {
-        setAnimeData(newData.data);
-      });
-  }, [id]);
-
+const SingleAnime = (props) => {
+  const id = props.match.params.id;
+  const singleAnimeData = props.location.state.animeData;
+  const coverImage = singleAnimeData.attributes.coverImage.small;
+  const title =
+    singleAnimeData.attributes.titles.en ||
+    singleAnimeData.attributes.titles.en_jp;
+  const startDate = singleAnimeData.attributes.startDate;
+  const averageRating = singleAnimeData.attributes.averageRating;
+  const synopsis = singleAnimeData.attributes.synopsis;
+  console.log(singleAnimeData);
   return (
-    <div>
-      <h1> Hey I'm the Anime {id}! Edit me!!! </h1>
-      <div> </div>
-    </div>
+    <>
+      <h4>{title} </h4>
+      <h4>{startDate} </h4>
+      <h4>{`${averageRating}%`} </h4>
+      <p>{synopsis} </p>
+      <img src={coverImage} alt="" />
+    </>
   );
 };
 

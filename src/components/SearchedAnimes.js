@@ -6,7 +6,9 @@ const SearchedAnimes = ({ searchedContent }) => {
     <>
       <ul>
         {searchedContent.map((el) => (
-          <li>{el.attributes.titles.en_jp}</li>
+          <li>
+            <img src={el.attributes.posterImage.tiny} alt="" />
+          </li>
         ))}
       </ul>
     </>

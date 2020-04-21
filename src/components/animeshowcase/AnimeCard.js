@@ -27,7 +27,14 @@ const AnimeCard = ({ animeData }) => {
   };
   return (
     <div>
-      <Link to={`/anime/${animeData.id}`}>
+      <Link
+        to={{
+          pathname: `/anime/${animeData.id}`,
+          state: {
+            animeData,
+          },
+        }}
+      >
         <img src={image} className="anime image" alt="" />
       </Link>
       {onHoverInfo()}
