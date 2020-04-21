@@ -7,6 +7,7 @@ import Header from "./components/Header";
 import "./App.css";
 import SingleAnime from "./components/animeshowcase/SingleAnime";
 import InitialContent from "./components/animeshowcase/InitialContent";
+import Categories from "./components/Categories";
 
 function App() {
   const [searchedAnime, setSearchedAnime] = useState([]);
@@ -37,10 +38,10 @@ function App() {
           <AnimeSearch searchedText={(text) => setTerm(text)} />
           <Switch>
             <Route path="/" exact component={InitialContent} />
-            <Route path="/anime" exact component={SingleAnime} />
+            <Route path="/anime/:id" component={SingleAnime} />
           </Switch>
         </div>
-        <div className="categories">JESUS CATEGORIES </div>
+        <Route path="/" exact component={Categories} />
       </Router>
     </div>
   );

@@ -1,5 +1,6 @@
 import React from "react";
 import "./AnimeCard.css";
+import { Link } from "react-router-dom";
 
 const AnimeCard = ({ animeData }) => {
   console.log(animeData);
@@ -27,7 +28,9 @@ const AnimeCard = ({ animeData }) => {
   };
   return (
     <div>
-      <img src={image} className="anime image" alt="" />
+      <Link to={`/anime/${animeData.id}`}>
+        <img src={image} className="anime image" alt="" />
+      </Link>
       {onHoverInfo()}
     </div>
   );
