@@ -3,7 +3,6 @@ import "./AnimeCard.css";
 import { Link } from "react-router-dom";
 
 const AnimeCard = ({ animeData }) => {
-  console.log(animeData);
   const image = animeData.attributes.posterImage.small;
   const onHoverInfo = () => {
     const title =

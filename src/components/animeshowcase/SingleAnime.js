@@ -13,7 +13,7 @@ const SingleAnime = ({ match }) => {
 
   return (
     <div>
-      <h1> Hey I'm the Animeee! {id} </h1>
+      <h1> Hey I'm the Anime {id}! Edit me!!! </h1>
       <div> </div>
     </div>
   );
