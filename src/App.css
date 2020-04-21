@@ -1,0 +1,31 @@
+#body {
+  box-sizing: border-box;
+  background-color: #f7f7f7;
+}
+
+.main.container {
+  margin-top: 50px;
+  width: 1400px;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+.container {
+  width: 850px;
+  margin: 0 auto;
+}
+
+.grid.container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+/* temporary */
+
+.categories {
+  width: 300px;
+  height: 600px;
+  background-color: #fff;
+  margin-left: 20px;
+  text-align: center;
+}

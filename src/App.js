@@ -1,72 +1,48 @@
-import React, { Component, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import AnimeCard from "./components/AnimeCard";
+import AnimeCard from "./components/animeshowcase/AnimeCard";
 import AnimeSearch from "./components/AnimeSearch";
 import Header from "./components/Header";
-import SearchedAnime from "./components/SearchedAnime";
+import "./App.css";
+import SingleAnime from "./components/animeshowcase/SingleAnime";
+import InitialContent from "./components/animeshowcase/InitialContent";
 
 function App() {
   const [searchedAnime, setSearchedAnime] = useState([]);
-  const [trendingAnime, setTrendingAnime] = useState([]);
-  const [trendingManga, setTrendingManga] = useState([]);
-  const [highestRated, setHighestRated] = useState([]);
-  const [isLoading, setIsLoading] = useState(true); // to be used
   const [term, setTerm] = useState("");
+  const [isLoading, setIsLoading] = useState(true); // to be used
 
-  useEffect(() => {
-    const fetchSearchedAnime = () => {
-      if (term !== "") {
-        fetch(
-          `https://kitsu.io/api/edge/anime?filter[text]=${term}?&sort=-averageRating`
-        )
-          .then((res) => res.json())
-          .then((newData) => setSearchedAnime(newData.data));
-      }
-    };
+  const useEffect =
+    (() => {
+      const fetchSearchedAnime = () => {
+        if (term !== "") {
+          fetch(
+            `https://kitsu.io/api/edge/anime?filter[text]=${term}?&sort=-averageRating`
+          )
+            .then((res) => res.json())
+            .then((newData) => setSearchedAnime(newData.data));
+        }
+      };
 
-    const fetchTrendingAnime = () => {
-      fetch("https://kitsu.io/api/edge/trending/anime?limit=5?")
-        .then((res) => res.json())
-        .then((newData) => setTrendingAnime(newData.data));
-    };
-    const fetchTrendingManga = () => {
-      fetch("https://kitsu.io/api/edge/trending/manga?limit=5?")
-        .then((res) => res.json())
-        .then((newData) => setTrendingManga(newData.data));
-    };
-
-    const fetchHighestRated = () => {
-      fetch("https://kitsu.io/api/edge/anime?&sort=-averageRating")
-        .then((res) => res.json())
-        .then((newData) => setHighestRated(newData.data));
-    };
-
-    fetchSearchedAnime();
-    fetchTrendingAnime();
-    fetchTrendingManga();
-    fetchHighestRated();
-  }, [term]);
+      fetchSearchedAnime();
+    },
+    [term]);
 
   return (
-    <>
-      <Header />
-      <AnimeSearch searchedText={(text) => setTerm(text)} />
-      <div>
-        <SearchedAnime searchedAnime={searchedAnime} />
-        <h1> Trending Anime this week</h1>
-        {trendingAnime.map((AnimeData) => (
-          <AnimeCard key={AnimeData.id} animeData={AnimeData} />
-        ))}
-        <h1> Trending Manga this week</h1>
-        {trendingManga.map((AnimeData) => (
-          <AnimeCard key={AnimeData.id} animeData={AnimeData} />
-        ))}
-        <h1> Highest Rated Anime</h1>
-        {highestRated.map((AnimeData) => (
-          <AnimeCard key={AnimeData.id} animeData={AnimeData} />
-        ))}
-      </div>
-    </>
+    <div className="main container">
+      <Router>
+        <Header />
+        <div className="main content">
+          <AnimeSearch searchedText={(text) => setTerm(text)} />
+          <Switch>
+            <Route path="/" exact component={InitialContent} />
+            <Route path="/anime" exact component={SingleAnime} />
+          </Switch>
+        </div>
+        <div className="categories">JESUS CATEGORIES </div>
+      </Router>
+    </div>
   );
 }
 

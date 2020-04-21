@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import AnimeCard from "./AnimeCard";
+import AnimeCard from "./animeshowcase/AnimeCard";
+import "./AnimeSearch.css";
 
 const AnimeSearch = ({ searchedText }) => {
   const [text, setText] = useState("");
@@ -10,7 +11,8 @@ const AnimeSearch = ({ searchedText }) => {
   };
 
   return (
-    <div>
+    <div className="search container">
+      <h1> Explore Anime & Manga</h1>
       <form onSubmit={onTermSubmit}>
         <input onChange={(e) => setText(e.target.value)} />
       </form>

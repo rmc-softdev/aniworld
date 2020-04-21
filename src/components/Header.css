@@ -1,0 +1,24 @@
+.nav {
+  width: 100%;
+  background-color: #402f3f;
+  padding: 0;
+  border-bottom: 1px solid #271c26;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  height: 42px;
+  left: 0; /*to be checked, !important*/
+}
+
+.menu {
+  color: RGBA(237, 240, 241, 0.6);
+}
+
+.menu.right {
+  display: flex;
+}
+.browse {
+  color: RGBA(237, 240, 241, 1);
+}

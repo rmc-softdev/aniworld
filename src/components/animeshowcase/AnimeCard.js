@@ -1,4 +1,5 @@
 import React from "react";
+import "./AnimeCard.css";
 
 const AnimeCard = ({ animeData }) => {
   console.log(animeData);
@@ -26,7 +27,7 @@ const AnimeCard = ({ animeData }) => {
   };
   return (
     <div>
-      <img src={image} alt="" />
+      <img src={image} className="anime image" alt="" />
       {onHoverInfo()}
     </div>
   );
