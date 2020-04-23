@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 const SingleAnime = (props) => {
-  const id = props.match.params.id;
+  // const id = props.match.params.id;
   const singleAnimeData = props.location.state.animeData;
-  const coverImage = singleAnimeData.attributes.coverImage.small;
+  const coverImage = singleAnimeData.attributes.coverImage.original;
   const title =
     singleAnimeData.attributes.titles.en ||
     singleAnimeData.attributes.titles.en_jp;

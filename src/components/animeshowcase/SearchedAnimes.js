@@ -4,9 +4,10 @@ const SearchedAnimes = ({ searchedContent }) => {
   console.log(searchedContent);
   return (
     <>
+      <h2> Results: </h2>
       <ul>
         {searchedContent.map((el) => (
-          <li>
+          <li key={searchedContent.key}>
             <img src={el.attributes.posterImage.tiny} alt="" />
           </li>
         ))}

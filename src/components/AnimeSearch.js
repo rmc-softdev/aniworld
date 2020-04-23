@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
-import AnimeCard from "./animeshowcase/AnimeCard";
 import "./AnimeSearch.css";
-import SearchedAnimes from "./SearchedAnimes";
+import SearchedAnimes from "./animeshowcase/SearchedAnimes";
 
 const AnimeSearch = ({ searchedText }) => {
   const [text, setText] = useState("");
@@ -16,11 +15,14 @@ const AnimeSearch = ({ searchedText }) => {
       }
     };
     fetchSearchedAnime();
+
+    return () => {
+      //we want to clean up the list if the search input is empty
+    };
   }, [text]);
 
   const onTermSubmit = (e) => {
     e.preventDefault();
-    searchedText(text);
   };
 
   return (
@@ -29,8 +31,7 @@ const AnimeSearch = ({ searchedText }) => {
       <form onSubmit={onTermSubmit}>
         <input onChange={(e) => setText(e.target.value)} />
       </form>
-      <h2> Results: </h2>
-      <SearchedAnimes searchedContent={searchedAnime} />
+      {text !== "" && <SearchedAnimes searchedContent={searchedAnime} />}
     </div>
   );
 };

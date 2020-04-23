@@ -9,7 +9,15 @@
   position: fixed;
   top: 0;
   height: 42px;
-  left: 0; /*to be checked, !important*/
+  left: 0;
+}
+
+.navContainer {
+  width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .menu {
@@ -17,8 +25,18 @@
 }
 
 .menu.right {
+  width: 330px;
   display: flex;
+  justify-content: center;
 }
+
+.menu.left {
+  display: flex;
+  width: 840px;
+  align-items: center;
+}
+
 .browse {
+  margin-left: 20px;
   color: RGBA(237, 240, 241, 1);
 }

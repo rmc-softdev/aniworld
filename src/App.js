@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
-import AnimeCard from "./components/animeshowcase/AnimeCard";
 import AnimeSearch from "./components/AnimeSearch";
 import Header from "./components/Header";
 import "./App.css";
@@ -10,8 +9,8 @@ import InitialContent from "./components/animeshowcase/InitialContent";
 import Categories from "./components/Categories";
 
 function App() {
-  const [term, setTerm] = useState("");
-  const [isLoading, setIsLoading] = useState(true); // to be used
+  const [term, setTerm] = useState(""); // we're temporarily also storing the searched term here
+  const [isLoading, setIsLoading] = useState(true); // to be used in the future
 
   return (
     <div className="main container">

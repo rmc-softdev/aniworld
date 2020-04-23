@@ -19,9 +19,13 @@ const InitialContent = () => {
     };
 
     const fetchHighestRated = () => {
-      fetch("https://kitsu.io/api/edge/anime?&sort=-averageRating")
+      fetch(
+        "https://kitsu.io/api/edge/anime?page[limit]=5&page[offset]=5&sort=-averageRating"
+      )
         .then((res) => res.json())
-        .then((newData) => setHighestRated(newData.data));
+        .then((newData) => {
+          setHighestRated(newData.data);
+        });
     };
 
     fetchTrendingAnime();
