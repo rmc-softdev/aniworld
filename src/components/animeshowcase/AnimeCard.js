@@ -14,14 +14,10 @@ const AnimeCard = ({ animeData }) => {
     return (
       <div>
         {" "}
-        {title}
-        <br />
-        {startDate}
-        <br />
-        {averageRating}
-        <br />
-        {`#${popularityRank}`}
-        <br />
+        <p>{title}</p>
+        <p>{startDate}</p>
+        <p>{averageRating}</p>
+        <p>{`#${popularityRank}`}</p>
       </div>
     );
   };
@@ -29,7 +25,7 @@ const AnimeCard = ({ animeData }) => {
     <div>
       <Link
         to={{
-          pathname: `/anime/${animeData.id}`,
+          pathname: `/${animeData.attributes.slug}`,
           state: {
             animeData,
           },

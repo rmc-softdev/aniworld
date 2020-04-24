@@ -5,6 +5,7 @@ const InitialContent = () => {
   const [trendingAnime, setTrendingAnime] = useState([]);
   const [trendingManga, setTrendingManga] = useState([]);
   const [highestRated, setHighestRated] = useState([]);
+  const [topAiring, setTopAiring] = useState([]);
 
   useEffect(() => {
     const fetchTrendingAnime = () => {
@@ -28,11 +29,23 @@ const InitialContent = () => {
         });
     };
 
+    const fetchTopAiring = () => {
+      fetch(
+        `https://kitsu.io/api/edge/anime?page[limit]=5&page[offset]=0&sort=-startDate&sort=-averageRating`
+      )
+        .then((res) => res.json())
+        .then((newData) => {
+          setTopAiring(newData.data);
+        });
+    };
+
     fetchTrendingAnime();
     fetchTrendingManga();
     fetchHighestRated();
+    fetchTopAiring();
   }, []);
 
+  console.log(trendingAnime);
   return (
     <div className="secondary container">
       <h3> Trending Anime this week</h3>
@@ -50,6 +63,12 @@ const InitialContent = () => {
       <h3> Highest Rated Anime</h3>
       <div className="grid container">
         {highestRated.map((AnimeData) => (
+          <AnimeCard key={AnimeData.id} animeData={AnimeData} />
+        ))}
+      </div>
+      <h3> Top Airing Anime</h3>
+      <div className="grid container">
+        {topAiring.map((AnimeData) => (
           <AnimeCard key={AnimeData.id} animeData={AnimeData} />
         ))}
       </div>

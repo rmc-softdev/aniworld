@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import AnimeSearch from "./components/AnimeSearch";
@@ -7,6 +7,7 @@ import "./App.css";
 import SingleAnime from "./components/animeshowcase/SingleAnime";
 import InitialContent from "./components/animeshowcase/InitialContent";
 import Categories from "./components/Categories";
+import AnimeCategorized from "./components/animeshowcase/AnimeCategorized";
 
 function App() {
   const [term, setTerm] = useState(""); // we're temporarily also storing the searched term here
@@ -19,9 +20,10 @@ function App() {
         <div className="main content">
           <Route path="/" exact component={AnimeSearch} />
           <Route path="/" exact component={InitialContent} />
-          <Route path="/anime/:id" component={SingleAnime} />
+          <Route path="/:id" exact component={SingleAnime} />
         </div>
         <Route path="/" exact component={Categories} />
+        <Route path="/search/:genre" component={AnimeCategorized} />
       </Router>
     </div>
   );

@@ -9,9 +9,13 @@ const AnimeSearch = ({ searchedText }) => {
   useEffect(() => {
     const fetchSearchedAnime = () => {
       if (text !== "") {
-        fetch(`https://kitsu.io/api/edge/anime?filter[text]=${text}`)
+        fetch(
+          `https://kitsu.io/api/edge/anime?page[limit]=5&page[offset]=0&filter[text]=${text}`
+        )
           .then((res) => res.json())
-          .then((newData) => setSearchedAnime(newData.data));
+          .then((newData) => {
+            setSearchedAnime(newData.data);
+          });
       }
     };
     fetchSearchedAnime();
