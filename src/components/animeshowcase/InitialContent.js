@@ -1,79 +1,50 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import AnimeCard from "./AnimeCard";
+import { connect } from "react-redux";
+import { fetchInitialContent } from "../../actions/fetchActions";
+import { Link } from "react-router-dom";
 
-const InitialContent = () => {
-  const [trendingAnime, setTrendingAnime] = useState([]);
-  const [trendingManga, setTrendingManga] = useState([]);
-  const [highestRated, setHighestRated] = useState([]);
-  const [topAiring, setTopAiring] = useState([]);
-
+const InitialContent = (props) => {
   useEffect(() => {
-    const fetchTrendingAnime = () => {
-      fetch("https://kitsu.io/api/edge/trending/anime?limit=5?")
-        .then((res) => res.json())
-        .then((newData) => setTrendingAnime(newData.data));
-    };
-    const fetchTrendingManga = () => {
-      fetch("https://kitsu.io/api/edge/trending/manga?limit=5?")
-        .then((res) => res.json())
-        .then((newData) => setTrendingManga(newData.data));
-    };
-
-    const fetchHighestRated = () => {
-      fetch(
-        "https://kitsu.io/api/edge/anime?page[limit]=5&page[offset]=5&sort=-averageRating"
-      )
-        .then((res) => res.json())
-        .then((newData) => {
-          setHighestRated(newData.data);
-        });
-    };
-
-    const fetchTopAiring = () => {
-      fetch(
-        `https://kitsu.io/api/edge/anime?page[limit]=5&page[offset]=0&sort=-startDate&sort=-averageRating`
-      )
-        .then((res) => res.json())
-        .then((newData) => {
-          setTopAiring(newData.data);
-        });
-    };
-
-    fetchTrendingAnime();
-    fetchTrendingManga();
-    fetchHighestRated();
-    fetchTopAiring();
+    fetchInitialContent();
   }, []);
-
-  console.log(trendingAnime);
+  const renderContent = (array, title, location) => {
+    return (
+      <>
+        <h3>{title}</h3>
+        <div className="grid container">
+          {array.map((AnimeData) => (
+            <AnimeCard key={AnimeData.id} animeData={AnimeData} />
+          ))}
+          <Link
+            to={{
+              pathname: `/expanded/${location}}`,
+              state: {
+                state: array,
+              },
+            }}
+          >
+            <button>View More</button>
+          </Link>
+        </div>
+      </>
+    );
+  };
   return (
     <div className="secondary container">
-      <h3> Trending Anime this week</h3>
-      <div className="grid container">
-        {trendingAnime.map((AnimeData) => (
-          <AnimeCard key={AnimeData.id} animeData={AnimeData} />
-        ))}
-      </div>
-      <h3> Trending Manga this week</h3>
-      <div className="grid container">
-        {trendingManga.map((AnimeData) => (
-          <AnimeCard key={AnimeData.id} animeData={AnimeData} />
-        ))}
-      </div>
-      <h3> Highest Rated Anime</h3>
-      <div className="grid container">
-        {highestRated.map((AnimeData) => (
-          <AnimeCard key={AnimeData.id} animeData={AnimeData} />
-        ))}
-      </div>
-      <h3> Top Airing Anime</h3>
-      <div className="grid container">
-        {topAiring.map((AnimeData) => (
-          <AnimeCard key={AnimeData.id} animeData={AnimeData} />
-        ))}
-      </div>
+      {renderContent(props.trending, "Trending This Week", "trendinganime")}
+      {renderContent(props.airing, "Top Airing Anime", "topairing")}
+      {renderContent(props.trendingmanga, "Most Popular Manga", "ratedmanga")}
+      {renderContent(props.rated, "Highest Rated Anime", "ratedanime")}
     </div>
   );
 };
 
-export default InitialContent;
+const mapStateToProps = (state) => ({
+  trending: state.fetch.trending,
+  trendingmanga: state.fetch.trendingmanga,
+  rated: state.fetch.rated,
+  airing: state.fetch.airing,
+});
+
+export default connect(mapStateToProps, fetchInitialContent)(InitialContent);

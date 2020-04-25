@@ -1,39 +1,21 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { fetchGenres } from "../actions/fetchActions";
+import { connect } from "react-redux";
 
-const Categories = () => {
-  const [genres, setGenres] = useState([]);
-
+const Categories = (props) => {
   useEffect(() => {
-    const fetchGenre = () => {
-      fetch(
-        "https://kitsu.io/api/edge/genres?page%5Blimit%5D=20&page%5Boffset%5D=0"
-      )
-        .then((res) => res.json())
-        .then((newData) => {
-          setGenres(newData.data);
-        });
-    };
-
-    fetchGenre();
+    fetchGenres();
   }, []);
   return (
-    /* We should wrap it in a <Link with such features: then we'll render them, look out kitsu for more info.
-    to={{
-          pathname: `/${animeData.attributes.slug}`,
-          state: {
-            animeData,
-          },
-        }}
-    */
     <>
       <div className="categories">
         <ul>
-          {genres.map((el) => (
+          {props.genres.map((el) => (
             <li key={el.id}>
               <Link
                 to={{
-                  pathname: `/search/${el.attributes.name}`,
+                  pathname: `/category/${el.attributes.name}`,
                 }}
               >
                 <button>{el.attributes.name}</button>
@@ -45,5 +27,7 @@ const Categories = () => {
     </>
   );
 };
-
-export default Categories;
+const mapStateToProps = (state) => ({
+  genres: state.fetch.genres,
+});
+export default connect(mapStateToProps, fetchGenres)(Categories);
