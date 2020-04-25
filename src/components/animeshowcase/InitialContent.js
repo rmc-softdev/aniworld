@@ -9,18 +9,22 @@ const InitialContent = (props) => {
     fetchInitialContent();
   }, []);
   const renderContent = (array, title, location) => {
+    const reducedContent = array.slice(0, 5);
+    // we don't want to display them all here
+    // instead, it shall be done whenever the user clicks the view more button;
     return (
       <>
         <h3>{title}</h3>
         <div className="grid container">
-          {array.map((AnimeData) => (
+          {reducedContent.map((AnimeData) => (
             <AnimeCard key={AnimeData.id} animeData={AnimeData} />
           ))}
           <Link
             to={{
               pathname: `/expanded/${location}}`,
               state: {
-                state: array,
+                array,
+                title,
               },
             }}
           >

@@ -11,16 +11,16 @@ import {
 
 // This will handle all the fetch associated with the initial content on the showcase
 export const fetchInitialContent = () => (dispatch) => {
-  fetch("https://kitsu.io/api/edge/trending/anime?limit=5?")
+  fetch("https://kitsu.io/api/edge/trending/anime?limit=20?")
     .then((res) => res.json())
-    .then((anime) =>
+    .then((anime) => {
       dispatch({
         type: FETCH_TRENDING,
         payload: anime.data,
-      })
-    );
+      });
+    });
 
-  fetch("https://kitsu.io/api/edge/trending/manga?limit=5?")
+  fetch("https://kitsu.io/api/edge/trending/manga?limit=20?")
     .then((res) => res.json())
     .then((anime) =>
       dispatch({
@@ -30,7 +30,7 @@ export const fetchInitialContent = () => (dispatch) => {
     );
 
   fetch(
-    "https://kitsu.io/api/edge/anime?page[limit]=5&page[offset]=5&sort=-averageRating"
+    "https://kitsu.io/api/edge/anime?page[limit]=20&page[offset]=5&sort=-averageRating"
   )
     .then((res) => res.json())
     .then((anime) =>
@@ -41,7 +41,7 @@ export const fetchInitialContent = () => (dispatch) => {
     );
 
   fetch(
-    `https://kitsu.io/api/edge/anime?page[limit]=5&page[offset]=0&sort=-startDate&sort=-averageRating`
+    `https://kitsu.io/api/edge/anime?page[limit]=20&page[offset]=0&sort=-startDate&sort=-averageRating`
   )
     .then((res) => res.json())
     .then((anime) =>
