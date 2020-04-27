@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./AnimeSearch.css";
 import SearchedAnimes from "./animeshowcase/SearchedAnimes";
 
-const AnimeSearch = (props) => {
+const AnimeSearch = ({ logo }) => {
   const [text, setText] = useState(""); // this is the searched word
   const [searchedAnime, setSearchedAnime] = useState([]);
 
@@ -25,7 +25,7 @@ const AnimeSearch = (props) => {
 
   return (
     <div className="search container">
-      <h1>{props.logo ? props.logo : "Explore Anime & Manga"}</h1>
+      <h1 className="search slogan">{logo ? logo : "Explore Anime"}</h1>
       <form onSubmit={onTermSubmit}>
         <input onChange={(e) => setText(e.target.value)} value={text} />
       </form>

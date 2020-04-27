@@ -14,12 +14,13 @@ const InitialContent = (props) => {
     // instead, it shall be done whenever the user clicks the view more button;
     return (
       <>
-        <h3>{title}</h3>
+        <h3 className="showcase title">{title}</h3>
         <div className="grid container">
           {reducedContent.map((AnimeData) => (
             <AnimeCard key={AnimeData.id} animeData={AnimeData} />
           ))}
           <Link
+            className="expanded btn"
             to={{
               pathname: `/expanded/${location}}`,
               state: {
@@ -28,7 +29,7 @@ const InitialContent = (props) => {
               },
             }}
           >
-            <button>View More</button>
+            <button className="expand btn">View More</button>
           </Link>
         </div>
       </>

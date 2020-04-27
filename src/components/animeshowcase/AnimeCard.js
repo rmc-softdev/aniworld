@@ -3,37 +3,39 @@ import "./AnimeCard.css";
 import { Link } from "react-router-dom";
 
 const AnimeCard = ({ animeData }) => {
-  const image = animeData.attributes.posterImage.small;
+  const { attributes } = animeData;
+  const image = attributes.posterImage.small;
   const onHoverInfo = () => {
-    const title =
-      animeData.attributes.titles.en || animeData.attributes.titles.en_jp;
-    const startDate = animeData.attributes.startDate;
-    const averageRating = `${animeData.attributes.averageRating}%`;
-    const popularityRank = animeData.attributes.popularityRank;
+    const title = attributes.titles.en || attributes.titles.en_jp;
+    const startDate = attributes.startDate;
+    const averageRating = `${attributes.averageRating}%`;
+    const popularityRank = attributes.popularityRank;
 
     return (
-      <div>
+      <>
         {" "}
         <p>{title}</p>
         <p>{startDate}</p>
         <p>{averageRating}</p>
         <p>{`#${popularityRank}`}</p>
-      </div>
+      </>
     );
   };
   return (
     <div>
       <Link
         to={{
-          pathname: `/${animeData.attributes.slug}`,
+          pathname: `/${attributes.slug}`,
           state: {
             animeData,
           },
         }}
       >
-        <img src={image} className="anime image" alt="" />
+        <div className="img box">
+          <img src={image} className="anime image" alt="" />
+        </div>
       </Link>
-      {onHoverInfo()}
+      {onHoverInfo}
     </div>
   );
 };

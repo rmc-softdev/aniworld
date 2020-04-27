@@ -1,3 +1,11 @@
 .search.container {
-  margin-top: 80px;
+  margin-top: 70px;
+  margin-bottom: 50px;
+}
+
+.search.slogan {
+  margin: 10px 0;
+  font-size: 28px;
+  font-family: Asap;
+  color: #464646;
 }

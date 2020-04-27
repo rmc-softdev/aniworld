@@ -3,7 +3,7 @@ import AnimeSearch from "../AnimeSearch";
 import Categories from "../Categories";
 import AnimeCard from "./AnimeCard";
 
-const ExpandedInitialContent = (props) => {
+const ExpandedContent = (props) => {
   const title = props.location.state.title;
   const fullContent = props.location.state.array;
   return (
@@ -11,7 +11,6 @@ const ExpandedInitialContent = (props) => {
       <div className="main content">
         <AnimeSearch logo={title} />
         <div className="secondary container">
-          <p></p>
           <div className="grid container">
             {fullContent.map((AnimeData) => (
               <AnimeCard key={AnimeData.id} animeData={AnimeData} />
@@ -25,4 +24,4 @@ const ExpandedInitialContent = (props) => {
   );
 };
 
-export default ExpandedInitialContent;
+export default ExpandedContent;

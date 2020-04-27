@@ -1,4 +1,23 @@
 .anime.image {
   width: 155px;
   height: 220px;
+  border-radius: 3px;
+}
+
+.showcase.title {
+  margin: 10px 0;
+}
+.grid.container {
+  margin-bottom: 30px;
+}
+
+.expanded.btn {
+  grid-column-end: 6;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.img.box {
+  margin-top: 7px;
 }

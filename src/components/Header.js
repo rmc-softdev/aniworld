@@ -2,6 +2,10 @@ import React from "react";
 import "./Header.css";
 
 const Header = () => {
+  const dropdown = () => {
+    console.log("hi");
+  };
+
   return (
     <div className="nav">
       <div className="navContainer">

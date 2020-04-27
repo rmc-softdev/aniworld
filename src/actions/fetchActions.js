@@ -59,10 +59,10 @@ export const fetchGenres = () => (dispatch) => {
     "https://kitsu.io/api/edge/genres?page%5Blimit%5D=20&page%5Boffset%5D=0"
   )
     .then((res) => res.json())
-    .then((anime) =>
+    .then((anime) => {
       dispatch({
         type: FETCH_GENRES,
         payload: anime.data,
-      })
-    );
+      });
+    });
 };
