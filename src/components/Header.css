@@ -37,6 +37,36 @@
 }
 
 .browse {
+  margin: 0;
+  padding: 0;
+  position: relative;
   margin-left: 20px;
   color: RGBA(237, 240, 241, 1);
+}
+.dropdown.menu {
+  position: absolute;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  min-width: 160px;
+  padding: 5px 0;
+  margin: 2px 0 0;
+  font-size: 1rem;
+  color: #373a3c;
+  text-align: left;
+  list-style: none;
+  background-color: #fff;
+  background-clip: padding-box;
+  border-radius: 0.25rem;
+  margin-top: 10px;
+}
+
+.dropdown.menu li {
+  padding: 6px 20px;
+  font-weight: 500;
+}
+
+.contact {
+  color: red;
 }

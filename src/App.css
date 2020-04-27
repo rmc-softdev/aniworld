@@ -14,11 +14,9 @@ p {
 }
 
 .main.container {
-  margin-top: 20px;
   width: 1400px;
   display: flex;
   justify-content: center;
-  align-items: baseline;
 }
 .container {
   width: 850px;

@@ -4,8 +4,40 @@
 }
 
 .search.slogan {
-  margin: 10px 0;
+  margin-bottom: 8px;
+  padding-top: 10px;
   font-size: 28px;
   font-family: Asap;
   color: #464646;
+  font-weight: 700;
+}
+
+.search-wrapper {
+  width: 100%;
+  position: relative;
+}
+
+.search-icon {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+
+.search-icon svg {
+  width: 30px;
+  height: 30px;
+}
+
+.search-input {
+  width: 740px;
+  line-height: 50px;
+  height: 50px;
+  outline: 0;
+  font-size: 1.1em;
+  box-shadow: none;
+  text-indent: 0;
+  padding-left: 50px;
+  padding-right: 40px;
+  border: 1px solid #e5e5e5;
+  border-radius: 5px;
 }

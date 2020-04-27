@@ -11,12 +11,12 @@ const Categories = ({ genres }) => {
   return (
     <>
       <div className="categories">
-        <div className="box">
+        <div className="categories-container">
           <p class="category slogan">MY FAVORITE CATEGORIES</p>
           <div>
             <span class="project alert">
-              This is an ongoing personal project. Authentication is yet to be
-              implemented.
+              This is an ongoing personal project of mine. Authentication is yet
+              to be implemented.
             </span>
           </div>
           <div className="category showcase">

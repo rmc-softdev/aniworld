@@ -12,6 +12,8 @@ import Categories from "./components/Categories";
 import AnimeCategorized from "./components/animeshowcase/AnimeCategorized";
 import ExpandedContent from "./components/animeshowcase/ExpandedContent";
 import Home from "./components/Home";
+import MangaShowCase from "./components/animeshowcase/MangaShowCase";
+import ShowCase from "./components/animeshowcase/ShowCase";
 
 function App() {
   //const [term, setTerm] = useState(""); we're temporarily also storing the searched term here
@@ -19,18 +21,16 @@ function App() {
 
   return (
     <Provider store={store}>
-      <div className="main container">
-        <Router>
+      <Router>
+        <div className="main container">
           <Header />
-          <div className="main content">
-            <Route path="/" exact component={Home} />
-            <Route path="/:id" exact component={SingleAnime} />
-          </div>
+          <Route path="/" exact component={Home} />
           <Route path="/category/:genre" exact component={AnimeCategorized} />
           <Route path="/expanded/:title" exact component={ExpandedContent} />
-          <Route path="/" exact component={Categories} />
-        </Router>
-      </div>
+          <Route path="/manga/new" exact component={ShowCase} />
+        </div>
+        <Route path="/:id" exact component={SingleAnime} />
+      </Router>
     </Provider>
   );
 }

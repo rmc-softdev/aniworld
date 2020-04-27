@@ -3,15 +3,15 @@ import AnimeCard from "./AnimeCard";
 import { connect } from "react-redux";
 import { fetchInitialContent } from "../../actions/fetchActions";
 import { Link } from "react-router-dom";
+import animeShowCase from "./HOC animeShowCase";
 
 const InitialContent = (props) => {
   useEffect(() => {
     fetchInitialContent();
   }, []);
-  const renderContent = (array, title, location) => {
-    const reducedContent = array.slice(0, 5);
-    // we don't want to display them all here
-    // instead, it shall be done whenever the user clicks the view more button;
+
+  const renderContent = (array, title, location, size) => {
+    const reducedContent = array.slice(0, size);
     return (
       <>
         <h3 className="showcase title">{title}</h3>
@@ -37,10 +37,15 @@ const InitialContent = (props) => {
   };
   return (
     <div className="secondary container">
-      {renderContent(props.trending, "Trending This Week", "trendinganime")}
-      {renderContent(props.airing, "Top Airing Anime", "topairing")}
-      {renderContent(props.trendingmanga, "Most Popular Manga", "ratedmanga")}
-      {renderContent(props.rated, "Highest Rated Anime", "ratedanime")}
+      {renderContent(props.trending, "Trending This Week", "trendinganime", 5)}
+      {renderContent(props.airing, "Top Airing Anime", "topairing", 5)}
+      {renderContent(
+        props.trendingmanga,
+        "Most Popular Manga",
+        "ratedmanga",
+        5
+      )}
+      {renderContent(props.rated, "Highest Rated Anime", "ratedanime", 5)}
     </div>
   );
 };
@@ -52,4 +57,7 @@ const mapStateToProps = (state) => ({
   airing: state.fetch.airing,
 });
 
-export default connect(mapStateToProps, fetchInitialContent)(InitialContent);
+export default connect(
+  mapStateToProps,
+  fetchInitialContent
+)(animeShowCase(InitialContent));

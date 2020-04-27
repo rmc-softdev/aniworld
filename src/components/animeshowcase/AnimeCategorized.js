@@ -6,23 +6,25 @@ import { Link } from "react-router-dom";
 
 const AnimeCategorized = (props) => {
   const searched = props.location.pathname.split("/")[2];
-  const [highestRated, setHighestRated] = useState([]);
+  const logo = `${searched} Anime`;
+  const [trending, setTrending] = useState([]);
   const [mostPopular, setMostPopular] = useState([]);
+  const [newlyReleased, setNewlyReleased] = useState([]);
 
   useEffect(() => {
-    const fetchBySearch = () => {
+    const fetchRated = () => {
       fetch(
         `https://kitsu.io/api/edge/anime?page[limit]=20&page[offset]=0&filter[genres]=${searched}&sort=-averageRating&sort=-startDate`
       )
         .then((res) => res.json())
         .then((newData) => {
-          setHighestRated(newData.data);
+          setTrending(newData.data);
         });
     };
 
     const fetchMostPopular = () => {
       fetch(
-        `https://kitsu.io/api/edge/anime?page[limit]=10&page[offset]=0&filter[genres]=${searched}&sort=popularityRank`
+        `https://kitsu.io/api/edge/anime?page[limit]=20&page[offset]=0&filter[genres]=${searched}&sort=popularityRank`
       )
         .then((res) => res.json())
         .then((newData) => {
@@ -30,11 +32,24 @@ const AnimeCategorized = (props) => {
         });
     };
 
+    const fetchNewlyReleased = () => {
+      fetch(
+        `https://kitsu.io/api/edge/anime?filter[seasonYear]=2020&page[limit]=20&page[offset]=0&filter[genres]=${searched}`
+      )
+        .then((res) => res.json())
+        .then((newData) => {
+          setNewlyReleased(newData.data);
+        });
+    };
+
     fetchMostPopular();
-    fetchBySearch();
+    fetchRated();
+    fetchNewlyReleased();
   }, [searched]);
   // we want to sort out our data in order to render  them in some particular fashion, say trending
+
   const renderContent = (array, title) => {
+    console.log(array);
     const reducedContent = array.slice(0, 10);
     return (
       <>
@@ -62,13 +77,13 @@ const AnimeCategorized = (props) => {
   return (
     <>
       <div className="main content">
-        <AnimeSearch />
+        <AnimeSearch logo={logo} />
         <div className="secondary container">
-          {renderContent(highestRated, `Trending ${searched} Anime`)}
+          {renderContent(newlyReleased, `Newly Released ${searched} Anime`)}
           {renderContent(mostPopular, `Most Popular ${searched} Anime`)}
+          {renderContent(trending, `Trending ${searched} Anime`)}
         </div>
       </div>
-
       <Categories />
     </>
   );

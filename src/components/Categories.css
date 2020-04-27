@@ -1,17 +1,16 @@
 .categories {
-  margin: 0;
   background: #fff;
   color: #464646;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
   border: 1px solid rgba(0, 0, 0, 0.09);
   width: 300px;
   height: 500px;
-  text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  margin-left: 10px;
+  margin-left: 20px;
+  margin-top: 90px;
 }
 
 .category.list {
@@ -29,6 +28,10 @@
 
 .category.showcase {
   margin-top: 50px;
+}
+
+.categories-container {
+  padding: 20px;
 }
 
 .category.slogan {
