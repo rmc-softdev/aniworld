@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import AnimeCard from "./AnimeCard";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 
+// TO DO
 export default (ChildComponent) => {
   class ComposedComponent extends React.Component {
     renderContent = (array, title, location, size) => {
@@ -15,25 +16,30 @@ export default (ChildComponent) => {
             {reducedContent.map((AnimeData) => (
               <AnimeCard key={AnimeData.id} animeData={AnimeData} />
             ))}
-            <Link
-              className="expanded btn"
-              to={{
-                pathname: `/expanded/${path}}`,
-                state: {
-                  array,
-                  title,
-                },
-              }}
-            >
-              <button className="expand btn">View More</button>
-            </Link>
+
+            <div className="expand btn">
+              <Link
+                className="expanded btn"
+                to={{
+                  pathname: `/expanded/${path}}`,
+                  state: {
+                    array,
+                    title,
+                  },
+                }}
+              >
+                View More
+              </Link>
+            </div>
           </div>
         </>
       );
     };
 
     render() {
-      return <ChildComponent {...this.props} />;
+      return (
+        <ChildComponent {...this.props} renderContent={this.renderContent} />
+      );
     }
   }
 

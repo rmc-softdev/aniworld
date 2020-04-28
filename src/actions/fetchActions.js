@@ -10,7 +10,7 @@ import {
 // for those, I chose to use component level state with hooks instead of Redux;
 
 // This will handle all the fetch associated with the initial content on the showcase
-export const fetchInitialContent = () => (dispatch) => {
+export const fetchShowCaseAnime = () => (dispatch) => {
   fetch("https://kitsu.io/api/edge/trending/anime?limit=20?")
     .then((res) => res.json())
     .then((anime) => {

@@ -3,7 +3,7 @@ import AnimeSearch from "../AnimeSearch";
 import Categories from "../Categories";
 import AnimeCard from "./AnimeCard";
 
-const ExpandedContent = (props) => {
+const ViewMoreContent = (props) => {
   const title = props.location.state.title;
   const fullContent = props.location.state.array;
   const renderWarning = (length) => {
@@ -36,4 +36,4 @@ const ExpandedContent = (props) => {
   );
 };
 
-export default ExpandedContent;
+export default ViewMoreContent;

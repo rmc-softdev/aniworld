@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import "./AnimeCard.css";
 import { Link } from "react-router-dom";
 
-const AnimeCard = ({ animeData }) => {
+const AnimeCard = ({ animeData, hoverState }) => {
   const { attributes } = animeData;
   const image = attributes.posterImage.small;
+
   const onHoverInfo = () => {
     const title = attributes.titles.en || attributes.titles.en_jp;
     const startDate = attributes.startDate;
@@ -25,7 +26,7 @@ const AnimeCard = ({ animeData }) => {
     <div>
       <Link
         to={{
-          pathname: `/${attributes.slug}`,
+          pathname: `/single/${attributes.slug}`,
           state: {
             animeData,
           },
@@ -35,7 +36,6 @@ const AnimeCard = ({ animeData }) => {
           <img src={image} className="anime image" alt="" />
         </div>
       </Link>
-      {onHoverInfo}
     </div>
   );
 };

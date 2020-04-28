@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./AnimeSearch.css";
 import SearchedAnimes from "./animeshowcase/SearchedAnimes";
+import { Link } from "react-router-dom";
 
 const AnimeSearch = ({ logo, synopsis }) => {
   const [text, setText] = useState(""); // this is the searched word
   const [searchedAnime, setSearchedAnime] = useState([]);
-  const [fill, setFill] = useState("");
+  const [fill, setFill] = useState("#acacac");
 
   useEffect(() => {
     const fetchSearchedAnime = () => {
@@ -23,8 +24,6 @@ const AnimeSearch = ({ logo, synopsis }) => {
   const onTermSubmit = (e) => {
     e.preventDefault();
   };
-
-  const changeSVG = (e) => {};
 
   return (
     <div className="search container">
@@ -53,6 +52,14 @@ const AnimeSearch = ({ logo, synopsis }) => {
         </div>
       </form>
       {text !== "" && <SearchedAnimes searchedContent={searchedAnime} />}
+      <span className="advanced search">
+        {" "}
+        Or, browse with the{" "}
+        <span className="advanced-btn">
+          {" "}
+          <Link to="/advanced-search/"> advanced search</Link>{" "}
+        </span>{" "}
+      </span>
     </div>
   );
 };

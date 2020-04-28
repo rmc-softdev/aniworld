@@ -13,6 +13,10 @@ p {
   padding: 0;
 }
 
+a {
+  text-decoration: none;
+}
+
 .main.container {
   width: 1400px;
   display: flex;

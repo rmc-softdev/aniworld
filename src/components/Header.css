@@ -10,6 +10,7 @@
   top: 0;
   height: 42px;
   left: 0;
+  z-index: 1000;
 }
 
 .navContainer {

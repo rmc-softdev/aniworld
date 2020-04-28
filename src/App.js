@@ -8,11 +8,9 @@ import store from "./components/store";
 import Header from "./components/Header";
 import "./App.css";
 import SingleAnime from "./components/animeshowcase/SingleAnime";
-import Categories from "./components/Categories";
-import AnimeCategorized from "./components/animeshowcase/AnimeCategorized";
-import ExpandedContent from "./components/animeshowcase/ExpandedContent";
+import ShowCaseCategory from "./components/animeshowcase/ShowCaseCategory";
+import ViewMoreContent from "./components/animeshowcase/ViewMoreContent";
 import Home from "./components/Home";
-import MangaShowCase from "./components/animeshowcase/MangaShowCase";
 import ShowCase from "./components/animeshowcase/ShowCase";
 
 function App() {
@@ -25,11 +23,11 @@ function App() {
         <div className="main container">
           <Header />
           <Route path="/" exact component={Home} />
-          <Route path="/category/:genre" exact component={AnimeCategorized} />
-          <Route path="/expanded/:title" exact component={ExpandedContent} />
-          <Route path="/manga/new" exact component={ShowCase} />
+          <Route path="/category/:genre" exact component={ShowCaseCategory} />
+          <Route path="/expanded/:title" exact component={ViewMoreContent} />
+          <Route path="/manga/new" component={ShowCase} />
         </div>
-        <Route path="/:id" exact component={SingleAnime} />
+        <Route path="/single/:id" exact component={SingleAnime} />
       </Router>
     </Provider>
   );

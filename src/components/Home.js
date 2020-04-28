@@ -1,6 +1,6 @@
 import React from "react";
 import AnimeSearch from "./AnimeSearch";
-import InitialContent from "./animeshowcase/InitialContent";
+import ShowCaseAnime from "./animeshowcase/ShowCaseAnime";
 import Categories from "./Categories";
 
 const Home = () => {
@@ -8,7 +8,7 @@ const Home = () => {
     <>
       <div className="main content">
         <AnimeSearch />
-        <InitialContent />
+        <ShowCaseAnime />
       </div>
       <Categories />
     </>

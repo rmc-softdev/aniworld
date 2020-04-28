@@ -13,11 +13,19 @@
 }
 
 .expanded.btn {
-  grid-column-end: 6;
+  font-size: 14px;
+  color: #f75239;
+  cursor: pointer;
+  grid-column-end: 4;
   margin-top: 10px;
-  display: flex;
-  justify-content: center;
-  font-size: 12px;
+  padding-right: 15px;
+}
+.expand.btn {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-end: 6;
+  background-color: #f7f7f7;
+  border: none;
 }
 
 .img.box {

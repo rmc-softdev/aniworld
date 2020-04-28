@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Categories from "../Categories";
 import AnimeSearch from "../AnimeSearch";
-import AnimeCard from "./AnimeCard";
-import { Link } from "react-router-dom";
+import animeShowCase from "./animeShowCase";
 
-const AnimeCategorized = (props) => {
+const ShowCaseCategory = (props) => {
   const searched = props.location.pathname.split("/")[2];
   const logo = `${searched} Anime`;
   const [trending, setTrending] = useState([]);
@@ -48,40 +47,29 @@ const AnimeCategorized = (props) => {
   }, [searched]);
   // we want to sort out our data in order to render  them in some particular fashion, say trending
 
-  const renderContent = (array, title) => {
-    console.log(array);
-    const reducedContent = array.slice(0, 10);
-    return (
-      <>
-        <h3> {title} </h3>
-        <div className="grid container">
-          {reducedContent.map((AnimeData) => (
-            <AnimeCard key={AnimeData.id} animeData={AnimeData} />
-          ))}
-          <Link
-            to={{
-              pathname: `/expanded/${title}}`,
-              state: {
-                array,
-                title,
-              },
-            }}
-          >
-            <button>View More</button>
-          </Link>
-        </div>
-      </>
-    );
-  };
-
   return (
     <>
       <div className="main content">
         <AnimeSearch logo={logo} />
         <div className="secondary container">
-          {renderContent(newlyReleased, `Newly Released ${searched} Anime`)}
-          {renderContent(mostPopular, `Most Popular ${searched} Anime`)}
-          {renderContent(trending, `Trending ${searched} Anime`)}
+          {props.renderContent(
+            newlyReleased,
+            `Newly Released ${searched} Anime`,
+            null,
+            10
+          )}
+          {props.renderContent(
+            mostPopular,
+            `Most Popular ${searched} Anime`,
+            null,
+            10
+          )}
+          {props.renderContent(
+            trending,
+            `Trending ${searched} Anime`,
+            null,
+            10
+          )}
         </div>
       </div>
       <Categories />
@@ -89,4 +77,4 @@ const AnimeCategorized = (props) => {
   );
 };
 
-export default AnimeCategorized;
+export default animeShowCase(ShowCaseCategory);

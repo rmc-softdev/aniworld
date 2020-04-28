@@ -1,6 +1,9 @@
 .search.container {
-  margin-top: 70px;
+  margin-top: 50px;
   margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: initial;
 }
 
 .search.slogan {
@@ -40,4 +43,14 @@
   padding-right: 40px;
   border: 1px solid #e5e5e5;
   border-radius: 5px;
+}
+
+.advanced.search {
+  font-size: 13px;
+  margin-top: 14px;
+  margin-left: 3px;
+}
+
+.advanced-btn a {
+  color: #f75239;
 }

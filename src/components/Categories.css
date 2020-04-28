@@ -24,6 +24,9 @@
 .category.list li {
   margin: 3px 0;
   min-width: 50%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  font-weight: 500;
 }
 
 .category.showcase {
@@ -35,6 +38,7 @@
 }
 
 .category.slogan {
+  font-weight: 700;
   font-size: 14px;
   padding-bottom: 10px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.09);
@@ -42,5 +46,11 @@
   margin: 0 0 8px;
   padding: 0 0 10px;
   width: 100%;
-  margin-top: 10px;
+}
+
+.project.alert {
+  font-size: 13px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  font-weight: 500;
 }

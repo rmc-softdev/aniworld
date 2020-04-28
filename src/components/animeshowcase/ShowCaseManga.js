@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from "react";
-import Categories from "../Categories";
-import AnimeSearch from "../AnimeSearch";
-import AnimeCard from "./AnimeCard";
-import { Link } from "react-router-dom";
+import animeShowCase from "./animeShowCase";
 
-const MangaShowCase = (props) => {
+const ShowCaseManga = (props) => {
   const [trendingManga, setTrendingManga] = useState([]);
   const [topPublishing, setTopPublishing] = useState([]);
   const [highestRated, setHighestRated] = useState([]);
@@ -55,39 +52,14 @@ const MangaShowCase = (props) => {
   }, []);
   // we want to sort out our data in order to render  them in some particular fashion, say trending
 
-  const renderContent = (array, title) => {
-    const reducedContent = array.slice(0, 5);
-    return (
-      <>
-        <h3> {title} </h3>
-        <div className="grid container">
-          {reducedContent.map((AnimeData) => (
-            <AnimeCard key={AnimeData.id} animeData={AnimeData} />
-          ))}
-          <Link
-            to={{
-              pathname: `/expanded/${title}}`,
-              state: {
-                array,
-                title,
-              },
-            }}
-          >
-            <button>View More</button>
-          </Link>
-        </div>
-      </>
-    );
-  };
-
   return (
     <>
-      {renderContent(topPublishing, `Top Publishing Manga`)}
-      {renderContent(trendingManga, `Trending This Week`)}
-      {renderContent(highestRated, "Highest Rated Manga")}
-      {renderContent(mostPopular, "Most Popular Manga")}
+      {props.renderContent(topPublishing, `Top Publishing Manga`, "manga", 5)}
+      {props.renderContent(trendingManga, `Trending This Week`, "manga", 5)}
+      {props.renderContent(highestRated, "Highest Rated Manga", "manga", 5)}
+      {props.renderContent(mostPopular, "Most Popular Manga", "manga", 5)}
     </>
   );
 };
 
-export default MangaShowCase;
+export default animeShowCase(ShowCaseManga);
