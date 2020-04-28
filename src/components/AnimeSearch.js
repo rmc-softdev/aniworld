@@ -53,12 +53,10 @@ const AnimeSearch = ({ logo, synopsis }) => {
       </form>
       {text !== "" && <SearchedAnimes searchedContent={searchedAnime} />}
       <span className="advanced search">
-        {" "}
-        Or, browse with the{" "}
+        Or, browse with the
         <span className="advanced-btn">
-          {" "}
-          <Link to="/advanced-search/"> advanced search</Link>{" "}
-        </span>{" "}
+          <Link to="/advanced-search/"> advanced search</Link>
+        </span>
       </span>
     </div>
   );

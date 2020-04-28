@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import "./AnimeCard.css";
 import { Link } from "react-router-dom";
 
-const AnimeCard = ({ animeData, hoverState }) => {
+const AnimeCard = ({ animeData }) => {
+  const [hoverState, setHoverState] = useState(false);
   const { attributes } = animeData;
   const image = attributes.posterImage.small;
 
@@ -14,16 +15,19 @@ const AnimeCard = ({ animeData, hoverState }) => {
 
     return (
       <>
-        {" "}
-        <p>{title}</p>
-        <p>{startDate}</p>
-        <p>{averageRating}</p>
-        <p>{`#${popularityRank}`}</p>
+        <p>Title: {title}</p>
+        <p>Starting date: {startDate}</p>
+        <p>Average rating:{averageRating}</p>
+        <p>Popularity ranking:{`#${popularityRank}`}</p>
       </>
     );
   };
   return (
-    <div>
+    <div
+      className="card-box"
+      onMouseEnter={() => setHoverState(!hoverState)}
+      onMouseLeave={() => setHoverState(!hoverState)}
+    >
       <Link
         to={{
           pathname: `/single/${attributes.slug}`,
@@ -36,6 +40,7 @@ const AnimeCard = ({ animeData, hoverState }) => {
           <img src={image} className="anime image" alt="" />
         </div>
       </Link>
+      <div className="popout info">{hoverState ? onHoverInfo() : null}</div>
     </div>
   );
 };
