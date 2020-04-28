@@ -2,6 +2,7 @@ import React from "react";
 import Categories from "../Categories";
 import AnimeSearch from "../AnimeSearch";
 import ShowCaseManga from "./ShowCaseManga";
+import AdvancedSearch from "./AdvancedSearch";
 // import ShowCaseCategory from "./ShowCaseCategory";
 // TO DO! important import ShowCaseCategory from "./ShowCaseCategory";
 // INITIAL CONTENT AS WELL!
@@ -12,7 +13,7 @@ const ShowCase = ({ location: { pathname } }) => {
       <div className="main content">
         <AnimeSearch logo={"Explore Manga"} />
         <div className="secondary container">
-          {pathname.includes("manga") ? <ShowCaseManga /> : ""}
+          {pathname.includes("manga") ? <ShowCaseManga /> : null}
         </div>
       </div>
       <Categories />

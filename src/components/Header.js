@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./Header.css";
 import { Link } from "react-router-dom";
 
-const Header = () => {
+const Header = (props) => {
   const [dropDown, setDropDown] = useState(false);
 
   return (

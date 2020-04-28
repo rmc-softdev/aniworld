@@ -54,3 +54,8 @@
 .advanced-btn a {
   color: #f75239;
 }
+
+/* advanced section settings */
+.options-container {
+  width: 100%;
+}

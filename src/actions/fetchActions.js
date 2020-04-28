@@ -4,10 +4,8 @@ import {
   FETCH_RATED,
   FETCH_AIRING,
   FETCH_GENRES,
+  SET_TRANSPARENCY,
 } from "./types"; // By assigning the types constante names we avoid typos issues
-
-// Note that this component is responsable for handling fetching not required by the user;
-// for those, I chose to use component level state with hooks instead of Redux;
 
 // This will handle all the fetch associated with the initial content on the showcase
 export const fetchShowCaseAnime = () => (dispatch) => {

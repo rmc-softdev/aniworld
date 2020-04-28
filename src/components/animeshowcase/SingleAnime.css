@@ -1,0 +1,185 @@
+.background-cover {
+  bottom: 0;
+  top: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  height: 400px;
+}
+
+.background-cover {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+}
+
+.background.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.6;
+}
+
+.global-container {
+  display: flex;
+  flex-direction: column;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+}
+
+.content-container {
+  width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-column-gap: 15px;
+}
+
+.library.btns {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.library.btns button {
+  color: #fff;
+  border-radius: 3px;
+  border: none;
+}
+
+.image.col {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.image-container {
+  height: 170px;
+}
+
+.image-container img {
+  position: relative;
+  top: -120px;
+  height: 270px;
+  width: 200px;
+  border-radius: 3px;
+}
+
+.content.menu-container {
+  height: 40px;
+  background-color: #fff;
+}
+
+.content.menu-items {
+  width: 600px;
+  margin: 0 auto;
+  display: flex;
+}
+
+.content.menu-items li {
+  border-right: 1px solid #e5e5e5;
+  padding: 10px 20px;
+  font-size: 14px;
+  color: #9f9f9f;
+  cursor: pointer;
+}
+
+.info.col,
+.extras.col {
+  margin-top: 15px;
+}
+.trailer {
+  position: relative;
+}
+.trailer iframe {
+  border-radius: 5px;
+}
+
+.extras.content {
+  margin-top: 100px;
+  width: 260px;
+  height: 500px;
+  padding: 20px;
+  margin-bottom: 15px;
+  background: #fff;
+  border: 1px solid #eaeaea;
+  border-radius: 3px;
+}
+
+.anime.details {
+  font-size: 14px;
+  flex-wrap: nowrap;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 60%;
+}
+
+.characters {
+  font-size: 15px;
+  color: #000;
+}
+
+.start.date {
+  display: inline;
+  position: relative;
+  font-size: 17px;
+  color: #555;
+  font-weight: 700;
+  margin: 0 8px;
+}
+
+.watch {
+  cursor: pointer;
+  text-decoration: none;
+  padding: 8px;
+  width: 100%;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+.completed.watch {
+  background-color: #138a72;
+}
+
+.want.watch {
+  background-color: #2980b9;
+}
+.start.watch {
+  background-color: #7f3d9b;
+}
+
+.library.info {
+  width: 170px;
+}
+
+.library.info p {
+  text-align: center;
+  font-size: 13px;
+  padding-bottom: 5px;
+}
+
+.anime.details li {
+  display: flex;
+  margin-bottom: 5px;
+  justify-content: space-between;
+}
+
+.approval {
+  color: #138a72;
+  margin-top: 8px;
+  margin-bottom: 10px;
+}
+
+.anime.title {
+  font-size: 27px;
+  margin-bottom: 8px;
+}

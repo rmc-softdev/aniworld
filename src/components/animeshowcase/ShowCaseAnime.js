@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { fetchShowCaseAnime } from "../../actions/fetchActions";
 import animeShowCase from "./animeShowCase";

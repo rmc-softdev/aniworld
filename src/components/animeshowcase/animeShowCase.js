@@ -1,12 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import AnimeCard from "./AnimeCard";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 
-// TO DO
+// This is a HOC meant to be used in all showcase scenarios;
 export default (ChildComponent) => {
   class ComposedComponent extends React.Component {
     renderContent = (array, title, location, size) => {
+      //we'll use this function with categories and genres, so we cover both path options
       const path = location ? `${location}` : `${title}`;
       const reducedContent = array.slice(0, size);
       return (
