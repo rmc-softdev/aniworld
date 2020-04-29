@@ -1,0 +1,27 @@
+.options-container {
+  position: relative;
+  width: 10%;
+}
+
+.options-container button {
+  border: none;
+  background-color: #f7f7f7;
+}
+
+.options-container button:hover {
+  color: #f75239;
+  font-weight: 600;
+}
+
+.dropdown.options {
+  top: 17px;
+  left: auto;
+}
+
+.options-btn {
+  display: flex;
+}
+
+.options-btn .fas {
+  margin-left: 5px;
+}

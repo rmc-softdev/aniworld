@@ -55,7 +55,6 @@
   color: #f75239;
 }
 
-/* advanced section settings */
-.options-container {
-  width: 100%;
+.advanced-btn:hover {
+  font-weight: 600;
 }

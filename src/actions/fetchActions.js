@@ -8,7 +8,7 @@ import {
 } from "./types"; // By assigning the types constante names we avoid typos issues
 
 // This will handle all the fetch associated with the initial content on the showcase
-export const fetchShowCaseAnime = () => (dispatch) => {
+export const fetchShowCaseContent = () => (dispatch) => {
   fetch("https://kitsu.io/api/edge/trending/anime?limit=20?")
     .then((res) => res.json())
     .then((anime) => {

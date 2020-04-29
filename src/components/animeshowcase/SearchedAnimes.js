@@ -2,7 +2,6 @@ import React from "react";
 import "./SearchedAnime.css";
 
 const SearchedAnimes = ({ searchedContent }) => {
-  console.log(searchedContent);
   return (
     <>
       <div className="results">

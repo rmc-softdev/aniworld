@@ -117,7 +117,7 @@ const SingleAnime = (props) => {
               </li>
             </div>
             <div className="characters">
-              <h4> Characters</h4>
+              <h4 className="content slogan"> Characters</h4>
             </div>
           </div>
         </div>

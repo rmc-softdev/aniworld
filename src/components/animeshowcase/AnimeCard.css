@@ -28,6 +28,10 @@
   border: none;
 }
 
+.expand.btn:hover {
+  font-weight: 600;
+}
+
 .img.box {
   margin-top: 7px;
 }

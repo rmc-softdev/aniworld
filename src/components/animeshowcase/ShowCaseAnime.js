@@ -1,13 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { connect } from "react-redux";
-import { fetchShowCaseAnime } from "../../actions/fetchActions";
+import { fetchShowCaseContent } from "../../actions/fetchActions";
 import animeShowCase from "./animeShowCase";
 
 const ShowCaseAnime = (props) => {
-  useEffect(() => {
-    fetchShowCaseAnime();
-  }, []);
-
   return (
     <div className="secondary container">
       {props.renderContent(
@@ -37,5 +33,5 @@ const mapStateToProps = (state) => ({
 
 export default connect(
   mapStateToProps,
-  fetchShowCaseAnime
+  fetchShowCaseContent
 )(animeShowCase(ShowCaseAnime));

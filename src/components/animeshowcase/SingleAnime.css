@@ -168,9 +168,10 @@
 }
 
 .anime.details li {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   margin-bottom: 5px;
-  justify-content: space-between;
+  font-size: 12px;
 }
 
 .approval {
@@ -182,4 +183,8 @@
 .anime.title {
   font-size: 27px;
   margin-bottom: 8px;
+}
+
+.content.slogan {
+  font-size: 15px;
 }

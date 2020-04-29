@@ -22,10 +22,22 @@
 }
 
 .category.list li {
+  padding: 4px 0;
   margin: 3px 0;
   min-width: 50%;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, sans-serif;
+  font-weight: 500;
+}
+
+.category.list button {
+  background-color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.category.list button:hover {
+  color: #f75239;
   font-weight: 500;
 }
 
