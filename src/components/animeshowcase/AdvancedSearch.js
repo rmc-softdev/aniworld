@@ -22,7 +22,7 @@ const AdvancedSearch = ({ rated, airing, trending, trendingmanga }) => {
               className="options-btn"
               onClick={() => setDropDown(!dropDown)}
             >
-              {chosen} <i class="fas fa-sort-down"></i>{" "}
+              {chosen} <i class="fas fa-sort-down" />
             </button>
             {dropDown ? (
               <div className="dropdown options">

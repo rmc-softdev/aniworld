@@ -11,7 +11,13 @@ const Header = (props) => {
         <div className="menu left">
           <div className="logo">Logo</div>
           <div className="browse">
-            <button onClick={() => setDropDown(!dropDown)}> Browse </button>
+            <button
+              className="browse-btn"
+              onClick={() => setDropDown(!dropDown)}
+            >
+              {" "}
+              Browse <i class="fas fa-sort-down"> </i>
+            </button>
             {dropDown ? (
               <div className="dropdown menu">
                 <ul>
