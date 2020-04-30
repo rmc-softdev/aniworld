@@ -43,6 +43,7 @@
   position: relative;
   margin-left: 20px;
   color: RGBA(237, 240, 241, 1);
+  cursor: pointer;
 }
 
 .browse button {
@@ -56,7 +57,9 @@
 }
 
 .browse i {
-  margin-left: 7px;
+  margin-left: 3px;
+  width: 5px;
+  height: 4px;
 }
 
 .dropdown {

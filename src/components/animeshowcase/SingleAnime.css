@@ -35,7 +35,7 @@
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
-  grid-column-gap: 15px;
+  grid-column-gap: 35px;
 }
 
 .library.btns {
@@ -82,6 +82,7 @@
   width: 600px;
   margin: 0 auto;
   display: flex;
+  align-items: center;
 }
 
 .content.menu-items li {
@@ -185,6 +186,7 @@
 
 .anime.title {
   font-size: 27px;
+  margin-top: 0;
   margin-bottom: 8px;
 }
 

@@ -22,7 +22,7 @@ export default (ChildComponent) => {
               <Link
                 className="expanded btn"
                 to={{
-                  pathname: `/expanded/${path}}`,
+                  pathname: `/expanded/${path}`,
                   state: {
                     array,
                     title,

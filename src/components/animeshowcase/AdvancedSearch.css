@@ -20,6 +20,7 @@
 
 .options-btn {
   display: flex;
+  margin-bottom: 15px;
 }
 
 .options-btn .fas {

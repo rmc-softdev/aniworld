@@ -24,25 +24,18 @@ const Header = () => {
         <div className="menu left">
           <div className="logo">Logo</div>
           <div ref={ref} className="browse">
-            <button
-              className="browse-btn"
-              onClick={() => setDropDown(!dropDown)}
-            >
+            <span className="browse-btn" onClick={() => setDropDown(!dropDown)}>
               Browse <i class="fas fa-sort-down"> </i>
-            </button>
+            </span>
             {dropDown ? (
               <div className="dropdown menu">
                 <ul>
-                  <li>
-                    <Link onClick={() => setDropDown(false)} to="/">
-                      Anime
-                    </Link>
-                  </li>
-                  <li>
-                    <Link onClick={() => setDropDown(false)} to="/manga/new">
-                      Manga
-                    </Link>
-                  </li>
+                  <Link onClick={() => setDropDown(false)} to="/">
+                    <li>Anime</li>
+                  </Link>
+                  <Link onClick={() => setDropDown(false)} to="/manga/new">
+                    <li>Manga</li>
+                  </Link>
                 </ul>
               </div>
             ) : (

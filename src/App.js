@@ -28,7 +28,7 @@ function App() {
           <Route path="/expanded/:title" exact component={ViewMoreContent} />
           <Route path="/manga/new" component={ShowCase} />
         </div>
-        <Route path="/single/:id" exact component={SingleAnime} />
+        <Route path="/:slug/:id" exact component={SingleAnime} />
         <Route path="/advanced-search" component={AdvancedSearch} />
       </Router>
     </Provider>

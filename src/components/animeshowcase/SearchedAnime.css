@@ -6,6 +6,7 @@
   background-color: #fff;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
   border-radius: 3px;
+  position: relative;
 }
 
 .results.title {
@@ -39,6 +40,19 @@
   align-items: flex-start;
   padding: 6px 0;
 }
+.results.results.title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.results.title button {
+  font-size: 12px;
+  background-color: #efeef1;
+  border: none;
+  color: #f75239;
+  cursor: pointer;
+}
 
 .result.content {
   display: flex;
@@ -61,10 +75,18 @@
   text-align: center;
   vertical-align: baseline;
   border-radius: 0.25rem;
-  width: fit-content;
+  width: auto;
   margin-right: 8px;
+}
+
+.results-container {
+  position: absolute;
 }
 
 .resultsName {
   padding-left: 10px;
+}
+
+.results.closed {
+  opacity: 0;
 }

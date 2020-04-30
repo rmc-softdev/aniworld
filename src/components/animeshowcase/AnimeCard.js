@@ -1,12 +1,20 @@
-import React, { useState } from "react";
+import React from "react";
 import "./AnimeCard.css";
 import { Link } from "react-router-dom";
-import ImageAvatar from "./ImageAvatar";
+import { Image, Popup } from "semantic-ui-react";
 
 const AnimeCard = ({ animeData }) => {
-  const [hoverState, setHoverState] = useState(false);
   const { attributes } = animeData;
   const image = attributes.posterImage.small;
+
+  const PopupInfo = () => (
+    <Popup
+      content={onHoverInfo()}
+      trigger={<Image src={`${image}`} />}
+      position="right center"
+      className="popover"
+    />
+  );
 
   const onHoverInfo = () => {
     const title = attributes.titles.en || attributes.titles.en_jp;
@@ -16,30 +24,46 @@ const AnimeCard = ({ animeData }) => {
 
     return (
       <>
-        <p>Title: {title}</p>
-        <p>Starting date: {startDate}</p>
-        <p>Average rating:{averageRating}</p>
-        <p>Popularity ranking:{`#${popularityRank}`}</p>
+        <div className="pop header">
+          <span className="pop title"> {title} </span>
+          <p className="pop start"> ({startDate})</p>
+        </div>
+        <p className="pop rating">{averageRating}</p>
+        <div className="pop-container">
+          <p className="pop popularity">
+            <div className="pop-img heart">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/3/32/WikiFont_uniE033_-_heart_-_red.svg"
+                alt=""
+              />
+            </div>
+            {`#${popularityRank} Most Popular`}
+          </p>
+          <p className="pop rated">
+            <div className="pop-img star">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/e/e5/Full_Star_Yellow.svg"
+                alt=""
+              />
+            </div>
+            <span> #1 Rated</span>
+          </p>
+        </div>
       </>
     );
   };
   return (
-    <div
-      className="card-box"
-      onMouseEnter={() => setHoverState(!hoverState)}
-      onMouseLeave={() => setHoverState(!hoverState)}
-    >
+    <div className="card-box">
       <Link
         to={{
-          pathname: `/single/${attributes.slug}`,
+          pathname: `/${attributes.slug}/${animeData.id}`,
           state: {
             animeData,
           },
         }}
       >
-        <ImageAvatar image={image} />
+        {PopupInfo()}
       </Link>
-      <div className="popout info">{hoverState ? onHoverInfo() : null}</div>
     </div>
   );
 };
