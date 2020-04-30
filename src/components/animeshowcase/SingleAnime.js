@@ -85,6 +85,7 @@ const SingleAnime = (props) => {
                 left: 0,
                 width: "300px",
                 height: "70px",
+                align: "middle",
               }}
               src={`https://www.youtube.com/embed/${youtubeId}`}
               frameBorder="0"

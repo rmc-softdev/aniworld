@@ -91,6 +91,9 @@
   color: #9f9f9f;
   cursor: pointer;
 }
+.content.menu-items li:hover {
+  background-color: #f2f2f2;
+}
 
 .info.col,
 .extras.col {
@@ -187,4 +190,17 @@
 
 .content.slogan {
   font-size: 15px;
+}
+
+.results.type {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.expand-results {
+  cursor: pointer;
+  color: #f75239;
+  background-color: #faf9fa;
+  border: none;
 }

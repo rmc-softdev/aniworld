@@ -11,7 +11,7 @@ const AnimeSearch = ({ logo, synopsis }) => {
   useEffect(() => {
     const fetchSearchedAnime = () => {
       fetch(
-        `https://kitsu.io/api/edge/anime?page[limit]=5&page[offset]=0&filter[text]=${text}`
+        `https://kitsu.io/api/edge/anime?page[limit]=10&page[offset]=0&filter[text]=${text}`
       )
         .then((res) => res.json())
         .then((newData) => {

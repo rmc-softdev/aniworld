@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./AnimeCard.css";
 import { Link } from "react-router-dom";
+import ImageAvatar from "./ImageAvatar";
 
 const AnimeCard = ({ animeData }) => {
   const [hoverState, setHoverState] = useState(false);
@@ -36,9 +37,7 @@ const AnimeCard = ({ animeData }) => {
           },
         }}
       >
-        <div className="img box">
-          <img src={image} className="anime image" alt="" />
-        </div>
+        <ImageAvatar image={image} />
       </Link>
       <div className="popout info">{hoverState ? onHoverInfo() : null}</div>
     </div>

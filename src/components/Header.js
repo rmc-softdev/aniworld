@@ -1,31 +1,47 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./Header.css";
 import { Link } from "react-router-dom";
 
-const Header = (props) => {
+const Header = () => {
+  const ref = useRef();
   const [dropDown, setDropDown] = useState(false);
 
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (ref.current && !ref.current.contains(event.target)) {
+        setDropDown(!setDropDown);
+      }
+    }
+
+    document.addEventListener("click", handleClickOutside);
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, [ref]);
   return (
     <div className="nav">
       <div className="navContainer">
         <div className="menu left">
           <div className="logo">Logo</div>
-          <div className="browse">
+          <div ref={ref} className="browse">
             <button
               className="browse-btn"
               onClick={() => setDropDown(!dropDown)}
             >
-              {" "}
               Browse <i class="fas fa-sort-down"> </i>
             </button>
             {dropDown ? (
               <div className="dropdown menu">
                 <ul>
                   <li>
-                    <Link to="/">Anime</Link>
+                    <Link onClick={() => setDropDown(false)} to="/">
+                      Anime
+                    </Link>
                   </li>
                   <li>
-                    <Link to="/manga/new">Manga</Link>
+                    <Link onClick={() => setDropDown(false)} to="/manga/new">
+                      Manga
+                    </Link>
                   </li>
                 </ul>
               </div>

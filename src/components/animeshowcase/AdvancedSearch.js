@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import AnimeSearch from "../AnimeSearch";
 import "../AnimeSearch.css";
 import { connect } from "react-redux";
@@ -7,10 +7,23 @@ import AnimeCard from "./AnimeCard";
 import "./AdvancedSearch.css";
 
 const AdvancedSearch = ({ rated, airing, trending, trendingmanga }) => {
+  const ref = useRef();
   const [dropDown, setDropDown] = useState(false);
   const [selected, setSelected] = useState(trendingmanga);
-  console.log(selected);
   const [chosen, setChosen] = useState("Trending");
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (ref.current && !ref.current.contains(event.target)) {
+        setDropDown(!setDropDown);
+      }
+    }
+
+    document.addEventListener("click", handleClickOutside);
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, [ref]);
 
   return (
     <>
@@ -19,6 +32,7 @@ const AdvancedSearch = ({ rated, airing, trending, trendingmanga }) => {
         <div className="options-container">
           <div className="options-container">
             <button
+              ref={ref}
               className="options-btn"
               onClick={() => setDropDown(!dropDown)}
             >
