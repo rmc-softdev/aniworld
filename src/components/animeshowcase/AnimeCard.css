@@ -49,7 +49,6 @@
   margin-left: 5px;
   border-radius: 5px;
   color: #fff;
-  position: relative;
   z-index: 100;
   padding: 8px;
   padding-top: 0;
@@ -96,37 +95,37 @@
   display: flex;
   opacity: 0.85;
   align-items: center;
-}
-.pop.popularity {
-  margin-left: 22px;
+  margin-left: 19px;
+  position: relative;
 }
 
 .pop-img {
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
   position: relative;
 }
 
 .pop.popularity img {
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
 }
 
 .pop-img {
   position: relatve;
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
 }
 
 .heart {
   position: absolute;
-  left: 0;
+  left: -24px;
+  top: -4px;
 }
 
 .star {
   position: absolute;
-  left: 0;
-  top: 71%;
+  left: -24px;
+  top: -4px;
 }
 
 .pop.rated {
@@ -134,12 +133,13 @@
   align-items: center;
   color: #e5e5e5;
   opacity: 0.85;
-  margin-left: 22px;
+  margin-left: 19px;
   margin-top: 5px;
+  position: relative;
 }
 .pop.rated img {
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
 }
 
 .pop-container {

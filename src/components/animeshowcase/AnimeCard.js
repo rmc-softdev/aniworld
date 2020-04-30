@@ -21,6 +21,7 @@ const AnimeCard = ({ animeData }) => {
     const startDate = attributes.startDate;
     const averageRating = `${attributes.averageRating}%`;
     const popularityRank = attributes.popularityRank;
+    const ratingRank = attributes.ratingRank;
 
     return (
       <>
@@ -46,7 +47,7 @@ const AnimeCard = ({ animeData }) => {
                 alt=""
               />
             </div>
-            <span> #1 Rated</span>
+            <span> #{ratingRank} Highest Rated</span>
           </p>
         </div>
       </>

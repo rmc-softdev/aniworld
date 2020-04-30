@@ -206,3 +206,7 @@
   background-color: #faf9fa;
   border: none;
 }
+
+.synopsis {
+  line-height: 1.5;
+}

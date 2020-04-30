@@ -67,7 +67,7 @@ const SingleAnime = (props) => {
               <h5 class="approval">
                 {`${averageRating}% Community Approval`}{" "}
               </h5>
-              <p>{synopsis} </p>
+              <p className="synopsis">{synopsis} </p>
             </div>
             <div className="extras col">
               <div className="trailer">
