@@ -14,6 +14,7 @@
 }
 
 .dropdown.options {
+  cursor: pointer;
   top: 17px;
   left: auto;
 }
@@ -21,6 +22,9 @@
 .options-btn {
   display: flex;
   margin-bottom: 15px;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
 }
 
 .options-btn .fas {

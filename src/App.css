@@ -26,6 +26,7 @@ button:focus {
   width: 1400px;
   display: flex;
   justify-content: center;
+  position: relative;
 }
 .container {
   width: 850px;

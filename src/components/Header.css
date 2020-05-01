@@ -29,6 +29,7 @@
   width: 330px;
   display: flex;
   justify-content: center;
+  cursor: pointer;
 }
 
 .menu.left {
@@ -42,7 +43,7 @@
   padding: 0;
   position: relative;
   margin-left: 20px;
-  color: RGBA(237, 240, 241, 1);
+  color: #fff;
   cursor: pointer;
 }
 
@@ -97,4 +98,9 @@
 
 .contact {
   color: #f75239;
+}
+
+.logo {
+  color: RGBA(237, 240, 241, 0.6);
+  cursor: pointer;
 }

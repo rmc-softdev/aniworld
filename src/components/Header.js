@@ -22,7 +22,10 @@ const Header = () => {
     <div className="nav">
       <div className="navContainer">
         <div className="menu left">
-          <div className="logo">Logo</div>
+          <Link to="/">
+            {" "}
+            <div className="logo">Logo</div>{" "}
+          </Link>
           <div ref={ref} className="browse">
             <span className="browse-btn" onClick={() => setDropDown(!dropDown)}>
               Browse <i class="fas fa-sort-down"> </i>

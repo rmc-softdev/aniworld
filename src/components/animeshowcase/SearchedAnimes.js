@@ -5,11 +5,12 @@ import { Link } from "react-router-dom";
 const SearchedAnimes = ({ searchedContent }) => {
   console.log(searchedContent?.attributes?.id);
   let reducedContent = searchedContent.slice(0, 5);
-  let show = "open";
-  const [status, setStatus] = useState(true);
   const [viewMore, setViewMore] = useState(false);
-  const [hide, setHide] = useState(false);
 
+  let show = "open";
+  /*
+  const [status, setStatus] = useState(true);
+  const [hide, setHide] = useState(false);
   const handleStatus = () => {
     if (!status) {
       show = "closed";
@@ -18,6 +19,7 @@ const SearchedAnimes = ({ searchedContent }) => {
       console.log(searchedContent, reducedContent);
     }
   };
+  */
   // it always after the click returns the emptied arrays, it shouldn't though
 
   const renderContent = () => {
@@ -66,13 +68,13 @@ const SearchedAnimes = ({ searchedContent }) => {
         <div className={`results-container ${show}`}>
           <div className="results title">
             <span> Search Results </span>
-            <button
+            {/*  <button
               onClick={() => {
                 setStatus(!status);
               }}
             >
               {status ? "Hide" : ""}
-            </button>
+            </button>*/}
           </div>
           <div className="results type">
             <span> Media</span>
