@@ -12,7 +12,7 @@ import ShowCaseCategory from "./components/animeshowcase/ShowCaseCategory";
 import ViewMoreContent from "./components/animeshowcase/ViewMoreContent";
 import Home from "./components/Home";
 import ShowCase from "./components/animeshowcase/ShowCase";
-import AdvancedSearch from "./components/animeshowcase/AdvancedSearch";
+import AdvancedSearch from "./components/search mechanism/AdvancedSearch";
 
 function App() {
   //const [term, setTerm] = useState(""); we're temporarily also storing the searched term here

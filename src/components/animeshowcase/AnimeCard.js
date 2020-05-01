@@ -65,6 +65,8 @@ const AnimeCard = ({ animeData }) => {
       >
         {PopupInfo()}
       </Link>
+      <button className="addLibrary"> Add to Library </button>
+      <div className="card overlay"></div>
     </div>
   );
 };

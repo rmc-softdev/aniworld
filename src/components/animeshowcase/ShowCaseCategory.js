@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Categories from "../Categories";
-import AnimeSearch from "../AnimeSearch";
+import AnimeSearch from "../search mechanism/AnimeSearch";
 import animeShowCase from "./animeShowCase";
 
 const ShowCaseCategory = (props) => {

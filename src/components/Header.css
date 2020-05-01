@@ -11,6 +11,16 @@
   height: 42px;
   left: 0;
   z-index: 1000;
+  transition: all 0.15s linear;
+}
+
+.nav.single {
+  background: transparent;
+  border: none;
+}
+.nav.single:hover {
+  background-color: #402f3f;
+  border-bottom: 1px solid #271c26;
 }
 
 .navContainer {

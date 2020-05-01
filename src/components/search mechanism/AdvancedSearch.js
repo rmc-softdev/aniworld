@@ -1,9 +1,9 @@
 import React, { useState, useRef, useEffect } from "react";
-import AnimeSearch from "../AnimeSearch";
-import "../AnimeSearch.css";
+import AnimeSearch from "./AnimeSearch";
+import "./AnimeSearch.css";
 import { connect } from "react-redux";
 import { fetchShowCaseContent } from "../../actions/fetchActions";
-import AnimeCard from "./AnimeCard";
+import AnimeCard from "../animeshowcase/AnimeCard";
 import "./AdvancedSearch.css";
 
 const AdvancedSearch = ({ rated, airing, trending, trendingmanga }) => {

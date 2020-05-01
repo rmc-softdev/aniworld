@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./AnimeSearch.css";
-import SearchedAnimes from "./animeshowcase/SearchedAnimes";
+import SearchedAnimes from "./SearchedAnimes";
 import { Link } from "react-router-dom";
 
 const AnimeSearch = ({ logo, synopsis }) => {

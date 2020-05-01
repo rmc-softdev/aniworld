@@ -1,10 +1,34 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./Header.css";
 import { Link } from "react-router-dom";
+import Modal from "./Modal";
+import { withRouter } from "react-router-dom";
+import SignUp from "./SignUp";
 
-const Header = () => {
+const Header = (props) => {
+  //I'll use these to render features specific to certain pages, like the Single Anime component
+  const pageId = parseInt(props.location.pathname.split("/")[2]);
+  const [navShow, setNavShow] = useState(false);
+  let single;
+
+  useEffect(() => {
+    const renderStyle = () => {
+      if (Number.isInteger(pageId)) {
+        setNavShow(true);
+      } else {
+        setNavShow(false);
+      }
+    };
+    renderStyle();
+  }, [pageId]);
+
+  navShow ? (single = "single") : (single = "");
+
+  const modalRef = useRef();
   const ref = useRef();
   const [dropDown, setDropDown] = useState(false);
+
+  const openModal = () => modalRef.current.openModal();
 
   useEffect(() => {
     function handleClickOutside(event) {
@@ -19,7 +43,7 @@ const Header = () => {
     };
   }, [ref]);
   return (
-    <div className="nav">
+    <div className={`nav ${single}`}>
       <div className="navContainer">
         <div className="menu left">
           <Link to="/">
@@ -46,10 +70,15 @@ const Header = () => {
             )}
           </div>
         </div>
-        <div className="menu right">Sign in</div>
+        <div className="menu right">
+          <span onClick={openModal}> Sign Up</span>
+          <Modal ref={modalRef}>
+            <SignUp />
+          </Modal>
+        </div>
       </div>
     </div>
   );
 };
 
-export default Header;
+export default withRouter(Header);

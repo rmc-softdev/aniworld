@@ -32,11 +32,39 @@
 .card-box {
   width: 150px;
   height: 210px;
+  position: relative;
+  transition: all 1s ease;
 }
+
+.card-box button {
+  visibility: hidden;
+}
+.card-box img:hover {
+  background-color: transparent;
+  opacity: 0.8;
+}
+.card-box:hover .addLibrary {
+  visibility: visible;
+}
+
 .card-box img {
   width: 150px;
   height: 210px;
   border-radius: 3px;
+}
+.addLibrary {
+  position: absolute;
+  top: 80%;
+  left: 8%;
+  border: none;
+  background-color: #16a085;
+  color: #fff;
+  width: 120px;
+  height: 30px;
+  border-radius: 3px;
+  font-size: 12px;
+  padding: 7px;
+  cursor: pointer;
 }
 
 .popover {

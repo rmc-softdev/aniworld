@@ -1,5 +1,5 @@
 import React from "react";
-import AnimeSearch from "../AnimeSearch";
+import AnimeSearch from "../search mechanism/AnimeSearch";
 import Categories from "../Categories";
 import AnimeCard from "./AnimeCard";
 
