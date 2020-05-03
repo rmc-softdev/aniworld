@@ -4,6 +4,7 @@ import "./SingleAnime.css";
 const SingleAnime = (props) => {
   const id = props.location.pathname.split("/")[2];
   const [singleAnimeData, setSingleAnimeData] = useState(null);
+  console.log(singleAnimeData);
   //setSingleAnimeData(props.location.state.animeData) we can also use the current state if we need to!
   const renderContent = (props) => {
     if (singleAnimeData) {
@@ -65,7 +66,9 @@ const SingleAnime = (props) => {
                 {title} <h5 className="start date">{startDate} </h5>
               </h3>
               <h5 class="approval">
-                {`${averageRating}% Community Approval`}{" "}
+                {averageRating
+                  ? `${averageRating}% Community Approval`
+                  : "Sorry, no score found. The API I'm using to fetch data is yet to update its score."}
               </h5>
               <p className="synopsis">{synopsis} </p>
             </div>

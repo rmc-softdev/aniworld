@@ -40,6 +40,11 @@
   align-items: flex-start;
   padding: 6px 0;
 }
+
+.results-items:hover {
+  background-color: #efeef1;
+}
+
 .results.results.title {
   display: flex;
   flex-direction: row;

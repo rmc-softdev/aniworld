@@ -12,9 +12,7 @@
   font-size: 13px;
   color: #f75239;
   cursor: pointer;
-  grid-column-end: 4;
-  margin-top: 10px;
-  padding-right: 15px;
+  grid-column-end: 3;
 }
 .expand.btn {
   display: grid;
@@ -30,8 +28,6 @@
 }
 
 .card-box {
-  width: 150px;
-  height: 210px;
   position: relative;
   transition: all 1s ease;
 }
@@ -42,6 +38,11 @@
 
 .card-box:hover .addLibrary {
   visibility: visible;
+}
+
+.card-box {
+  width: 150px;
+  height: 210px;
 }
 
 .card-box img {
