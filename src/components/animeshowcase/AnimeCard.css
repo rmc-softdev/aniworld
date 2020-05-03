@@ -39,10 +39,7 @@
 .card-box button {
   visibility: hidden;
 }
-.card-box img:hover {
-  background-color: transparent;
-  opacity: 0.8;
-}
+
 .card-box:hover .addLibrary {
   visibility: visible;
 }
@@ -174,4 +171,26 @@
 .pop-container {
   display: flex;
   flex-direction: column;
+}
+
+#overlay {
+  position: absolute;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.card-box:hover #overlay {
+  display: block;
+}
+
+.card-box .addLibrary:hover {
+  background-color: #2cbda0;
 }

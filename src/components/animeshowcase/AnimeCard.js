@@ -10,7 +10,15 @@ const AnimeCard = ({ animeData }) => {
   const PopupInfo = () => (
     <Popup
       content={onHoverInfo()}
-      trigger={<Image src={`${image}`} />}
+      trigger={
+        <div>
+          <div className="overlay-container">
+            <img src={`${image}`} />
+            <div id="overlay"></div>
+          </div>
+          <button className="addLibrary"> Add to Library </button>
+        </div>
+      }
       position="right center"
       className="popover"
     />
@@ -65,8 +73,6 @@ const AnimeCard = ({ animeData }) => {
       >
         {PopupInfo()}
       </Link>
-      <button className="addLibrary"> Add to Library </button>
-      <div className="card overlay"></div>
     </div>
   );
 };
