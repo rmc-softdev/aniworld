@@ -190,6 +190,10 @@
   margin-bottom: 8px;
 }
 
+.score.error {
+  color: rgb(230, 10, 10);
+}
+
 .content.slogan {
   font-size: 15px;
 }

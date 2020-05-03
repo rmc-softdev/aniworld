@@ -4,7 +4,6 @@ import "./SingleAnime.css";
 const SingleAnime = (props) => {
   const id = props.location.pathname.split("/")[2];
   const [singleAnimeData, setSingleAnimeData] = useState(null);
-  console.log(singleAnimeData);
   //setSingleAnimeData(props.location.state.animeData) we can also use the current state if we need to!
   const renderContent = (props) => {
     if (singleAnimeData) {
@@ -66,9 +65,15 @@ const SingleAnime = (props) => {
                 {title} <h5 className="start date">{startDate} </h5>
               </h3>
               <h5 class="approval">
-                {averageRating
-                  ? `${averageRating}% Community Approval`
-                  : "Sorry, no score found. The API I'm using to fetch data is yet to update its score."}
+                {averageRating ? (
+                  `${averageRating}% Community Approval`
+                ) : (
+                  <span className="score error">
+                    {" "}
+                    Sorry, no score found. The API I'm using to fetch data is
+                    yet to update its score.
+                  </span>
+                )}
               </h5>
               <p className="synopsis">{synopsis} </p>
             </div>
@@ -124,23 +129,25 @@ const SingleAnime = (props) => {
     }
   };
 
-  const [charactersId, setCharactersId] = useState({});
+  // const [charactersId, setCharactersId] = useState([]);
   // const [charactersData, setCharactersData] = useState("");
+  console.log(singleAnimeData);
   useEffect(() => {
+    // const charLink = singleAnimeData?.relationships.characters.links.self;
     /*
-    const charLink = singleAnimeData.relationships.characters.links.self;
     fetch(`https://kitsu.io/api/edge/${charLink}`)
       .then((res) => res.json())
       .then((newData) => {
         setCharactersId(newData.data.slice(0, 8));
       });
-      */
+  */
     fetch(`https://kitsu.io/api/edge/anime/${id}`)
       .then((res) => res.json())
       .then((newData) => {
         setSingleAnimeData(newData.data);
       });
   }, [id]);
+
   return <>{renderContent(props)}</>;
 };
 

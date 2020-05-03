@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "./AnimeSearch.css";
 import SearchedAnimes from "./SearchedAnimes";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 
-const AnimeSearch = ({ logo, synopsis }) => {
+const AnimeSearch = (props) => {
+  console.log(props);
   const [text, setText] = useState(""); // this is the searched word
   const [searchedAnime, setSearchedAnime] = useState([]);
   const [fill, setFill] = useState("#acacac");
@@ -27,8 +28,10 @@ const AnimeSearch = ({ logo, synopsis }) => {
 
   return (
     <div className="search container">
-      <h1 className="search slogan">{logo ? logo : "Explore Anime"}</h1>
-      {synopsis}
+      <h1 className="search slogan">
+        {props.logo ? props.logo : "Explore Anime"}
+      </h1>
+      {props.synopsis}
       <form onSubmit={onTermSubmit}>
         <div className="search-wrapper">
           <span className="search-icon">
@@ -52,14 +55,18 @@ const AnimeSearch = ({ logo, synopsis }) => {
         </div>
       </form>
       {text !== "" && <SearchedAnimes searchedContent={searchedAnime} />}
-      <span className="advanced search">
-        Or, browse with the
-        <span className="advanced-btn">
-          <Link to="/advanced-search/"> advanced search</Link>
+      {props.location.pathname.includes("advanced") ? (
+        ""
+      ) : (
+        <span className="advanced search">
+          Or, browse with the
+          <span className="advanced-btn">
+            <Link to="/advanced-search/"> advanced search</Link>
+          </span>
         </span>
-      </span>
+      )}
     </div>
   );
 };
 
-export default AnimeSearch;
+export default withRouter(AnimeSearch);
