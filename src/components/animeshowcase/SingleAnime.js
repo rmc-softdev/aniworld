@@ -77,7 +77,7 @@ const SingleAnime = (props) => {
                   </span>
                 )}
               </h5>
-              <p className="synopsis">{synopsis} </p>
+              <p className="single-synopsis">{synopsis} </p>
             </div>
             <div className="extras col">
               <div className="trailer">
