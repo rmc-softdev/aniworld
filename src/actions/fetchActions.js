@@ -15,6 +15,7 @@ export const fetchShowCaseContent = () => (dispatch) => {
       dispatch({
         type: FETCH_TRENDING,
         payload: anime.data,
+        status: "done",
       });
     });
 
@@ -24,6 +25,7 @@ export const fetchShowCaseContent = () => (dispatch) => {
       dispatch({
         type: FETCH_TRENDINGMANGA,
         payload: anime.data,
+        status: "done",
       })
     );
 
@@ -35,6 +37,7 @@ export const fetchShowCaseContent = () => (dispatch) => {
       dispatch({
         type: FETCH_RATED,
         payload: anime.data,
+        status: "done",
       })
     );
 
@@ -46,6 +49,7 @@ export const fetchShowCaseContent = () => (dispatch) => {
       dispatch({
         type: FETCH_AIRING,
         payload: anime.data,
+        status: "done",
       })
     );
 };
@@ -61,6 +65,7 @@ export const fetchGenres = () => (dispatch) => {
       dispatch({
         type: FETCH_GENRES,
         payload: anime.data,
+        status: "done",
       });
     });
 };

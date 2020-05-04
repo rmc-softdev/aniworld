@@ -44,7 +44,7 @@ const Header = (props) => {
   }, [ref]);
   return (
     <div className={`nav ${single}`}>
-      <div className="navContainer">
+      <div data-test="nav-container" className="navContainer">
         <div className="menu left">
           <Link to="/">
             {" "}

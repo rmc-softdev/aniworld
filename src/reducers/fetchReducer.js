@@ -20,27 +20,32 @@ export default function (state = initialState, action) {
       return {
         ...state,
         trending: action.payload,
+        status: action.status,
       };
     case FETCH_TRENDINGMANGA:
       return {
         ...state,
         trendingmanga: action.payload,
+        status: action.status,
       };
 
     case FETCH_RATED:
       return {
         ...state,
         rated: action.payload,
+        status: action.status,
       };
     case FETCH_AIRING:
       return {
         ...state,
         airing: action.payload,
+        status: action.status,
       };
     case FETCH_GENRES:
       return {
         ...state,
         genres: action.payload,
+        status: action.status,
       };
     default:
       return state;

@@ -2,11 +2,13 @@ import React from "react";
 import "./AnimeCard.css";
 import { Link } from "react-router-dom";
 import { Image, Popup } from "semantic-ui-react";
+import { connect } from "react-redux";
+import { fetchShowCaseContent } from "../../actions/fetchActions";
 
-const AnimeCard = ({ animeData }) => {
+const AnimeCard = ({ animeData, status }) => {
   const { attributes } = animeData;
   const image = attributes.posterImage.small;
-
+  console.log(attributes);
   const PopupInfo = () => (
     <Popup
       content={onHoverInfo()}
@@ -26,10 +28,11 @@ const AnimeCard = ({ animeData }) => {
 
   const onHoverInfo = () => {
     const title = attributes.titles.en || attributes.titles.en_jp;
-    const startDate = attributes.startDate;
+    const startDate = attributes.startDate.split("-")[0];
     const averageRating = `${attributes.averageRating}%`;
     const popularityRank = attributes.popularityRank;
     const ratingRank = attributes.ratingRank;
+    const synopsis = attributes.synopsis;
 
     return (
       <>
@@ -58,6 +61,7 @@ const AnimeCard = ({ animeData }) => {
             <span> #{ratingRank} Highest Rated</span>
           </p>
         </div>
+        <div className="synopsis"> {synopsis} </div>
       </>
     );
   };
@@ -77,4 +81,12 @@ const AnimeCard = ({ animeData }) => {
   );
 };
 
-export default AnimeCard;
+const mapStateToProps = (state) => ({
+  trending: state.fetch.trending,
+  trendingmanga: state.fetch.trendingmanga,
+  rated: state.fetch.rated,
+  airing: state.fetch.airing,
+  status: state.fetch.status,
+});
+
+export default connect(mapStateToProps, fetchShowCaseContent)(AnimeCard);

@@ -4,7 +4,6 @@ import SearchedAnimes from "./SearchedAnimes";
 import { Link, withRouter } from "react-router-dom";
 
 const AnimeSearch = (props) => {
-  console.log(props);
   const [text, setText] = useState(""); // this is the searched word
   const [searchedAnime, setSearchedAnime] = useState([]);
   const [fill, setFill] = useState("#acacac");

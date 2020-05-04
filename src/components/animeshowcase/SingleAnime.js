@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { withRouter } from "react-router-dom";
 import "./SingleAnime.css";
 
 const SingleAnime = (props) => {
@@ -12,7 +13,7 @@ const SingleAnime = (props) => {
       const title =
         singleAnimeData.attributes.titles.en ||
         singleAnimeData.attributes.titles.en_jp;
-      const startDate = singleAnimeData.attributes.startDate;
+      const startDate = singleAnimeData.attributes.startDate.split("-")[0];
       const averageRating = singleAnimeData.attributes.averageRating;
       const synopsis = singleAnimeData.attributes.synopsis;
       const youtubeId = singleAnimeData.attributes.youtubeVideoId;
@@ -34,6 +35,7 @@ const SingleAnime = (props) => {
             style={{
               backgroundImage: `url(${coverImage || posterImage})`,
             }}
+            data-test="background-image"
           >
             <div className="background overlay"></div>
           </div>
@@ -131,7 +133,6 @@ const SingleAnime = (props) => {
 
   // const [charactersId, setCharactersId] = useState([]);
   // const [charactersData, setCharactersData] = useState("");
-  console.log(singleAnimeData);
   useEffect(() => {
     // const charLink = singleAnimeData?.relationships.characters.links.self;
     /*
@@ -151,4 +152,4 @@ const SingleAnime = (props) => {
   return <>{renderContent(props)}</>;
 };
 
-export default SingleAnime;
+export default withRouter(SingleAnime);

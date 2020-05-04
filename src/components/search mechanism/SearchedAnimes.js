@@ -3,7 +3,6 @@ import "./SearchedAnime.css";
 import { Link } from "react-router-dom";
 
 const SearchedAnimes = ({ searchedContent }) => {
-  console.log(searchedContent?.attributes?.id);
   let reducedContent = searchedContent.slice(0, 5);
   const [viewMore, setViewMore] = useState(false);
 
