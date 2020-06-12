@@ -13,6 +13,7 @@ const Header = (props) => {
 
   useEffect(() => {
     const renderStyle = () => {
+      //hides the Nav in the single anime page
       if (Number.isInteger(pageId)) {
         setNavShow(true);
       } else {
@@ -48,26 +49,39 @@ const Header = (props) => {
         <div className="menu left">
           <Link to="/">
             {" "}
-            <div className="logo">Logo</div>{" "}
+            <div
+              className="logo"
+              style={{ display: "flex", alignItems: "center" }}
+            >
+              <img
+                src="https://i.ibb.co/BGKh5Sc/kitsu-logo-2.jpg"
+                alt=""
+                style={{
+                  width: "52px",
+                  height: "auto",
+                  position: "relative",
+                }}
+              />
+              <span style={{ color: "#fff", marginLeft: "5px" }}>
+                {" "}
+                Anime World{" "}
+              </span>
+            </div>{" "}
           </Link>
           <div ref={ref} className="browse">
             <span className="browse-btn" onClick={() => setDropDown(!dropDown)}>
-              Browse <i class="fas fa-sort-down"> </i>
+              Browse <i className="fas fa-sort-down"> </i>
             </span>
-            {dropDown ? (
-              <div className="dropdown menu">
-                <ul>
-                  <Link onClick={() => setDropDown(false)} to="/">
-                    <li>Anime</li>
-                  </Link>
-                  <Link onClick={() => setDropDown(false)} to="/manga/new">
-                    <li>Manga</li>
-                  </Link>
-                </ul>
-              </div>
-            ) : (
-              dropDown
-            )}
+            <div className={`dropdown menu ${dropDown ? "active" : ""}`}>
+              <ul>
+                <Link onClick={() => setDropDown(false)} to="/">
+                  <li>Anime</li>
+                </Link>
+                <Link onClick={() => setDropDown(false)} to="/manga/new">
+                  <li>Manga</li>
+                </Link>
+              </ul>
+            </div>
           </div>
         </div>
         <div className="menu right">

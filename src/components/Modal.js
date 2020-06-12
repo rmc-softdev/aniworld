@@ -5,7 +5,6 @@ import "./Modal.css";
 const Modal = forwardRef((props, ref) => {
   const [display, setDisplay] = React.useState(false);
   let displayStatus;
-  let wrapperStatus;
   const node = document.querySelector("#modal-root");
 
   useImperativeHandle(ref, () => {
@@ -21,6 +20,7 @@ const Modal = forwardRef((props, ref) => {
 
   const close = () => {
     setDisplay(false);
+    console.log(display);
   };
 
   display ? (displayStatus = "opened") : (displayStatus = "");

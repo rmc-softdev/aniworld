@@ -14,17 +14,17 @@ const ShowCaseAnime = (props) => {
           5
         )
       ) : (
-        <div class="spinner">
-          <div class="double-bounce1"></div>
-          <div class="double-bounce2"></div>
+        <div className="spinner">
+          <div className="double-bounce1"></div>
+          <div className="double-bounce2"></div>
         </div>
       )}
       {props.status ? (
         props.renderContent(props.airing, "Top Airing Anime", "topairing", 5)
       ) : (
-        <div class="spinner">
-          <div class="double-bounce1"></div>
-          <div class="double-bounce2"></div>
+        <div className="spinner">
+          <div className="double-bounce1"></div>
+          <div className="double-bounce2"></div>
         </div>
       )}
       {props.status ? (
@@ -35,17 +35,17 @@ const ShowCaseAnime = (props) => {
           5
         )
       ) : (
-        <div class="spinner">
-          <div class="double-bounce1"></div>
-          <div class="double-bounce2"></div>
+        <div className="spinner">
+          <div className="double-bounce1"></div>
+          <div className="double-bounce2"></div>
         </div>
       )}
       {props.status ? (
         props.renderContent(props.rated, "Highest Rated Anime", "ratedanime", 5)
       ) : (
-        <div class="spinner">
-          <div class="double-bounce1"></div>
-          <div class="double-bounce2"></div>
+        <div className="spinner">
+          <div className="double-bounce1"></div>
+          <div className="double-bounce2"></div>
         </div>
       )}
     </div>

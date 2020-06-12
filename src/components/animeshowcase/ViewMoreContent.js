@@ -13,7 +13,7 @@ const ViewMoreContent = (props) => {
           Sorry, I couldn't find more out of the "{`${title}`}" category due the
           way this API operates. If you find a way around it, please contact me
           at
-          <span className="contact"> rmcdev@gmail.com</span>
+          <span className="contact"> rmcsoftdev@gmail.com</span>
         </h4>
       );
     }

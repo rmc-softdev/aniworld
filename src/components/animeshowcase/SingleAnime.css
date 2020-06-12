@@ -249,5 +249,15 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 150px;
+  }
+  .content.menu-items {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
+  .info.col {
+    margin-top: 50px;
+    padding: 20px;
   }
 }

@@ -37,3 +37,49 @@ button:focus {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
 }
+
+@media only screen and (max-width: 1350px) {
+  .main.container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .secondary.container {
+    width: 600px;
+  }
+  .grid.container {
+    width: 600px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-items: center;
+    align-items: center;
+  }
+
+  .search.container {
+    width: 600px;
+  }
+  .search-input {
+    width: 500px !important;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .grid.container {
+    width: 400px;
+    margin: 0 auto;
+  }
+
+  .showcase.title {
+    text-align: center;
+  }
+  .search.container {
+    width: 400px;
+  }
+  .search-input {
+    width: 300px !important;
+  }
+}

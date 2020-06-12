@@ -38,41 +38,37 @@ const AdvancedSearch = ({ rated, airing, trending, trendingmanga }) => {
             >
               {chosen} <i class="fas fa-sort-down" />
             </button>
-            {dropDown ? (
-              <div className="dropdown options">
-                <ul>
-                  <li
-                    onClick={() => {
-                      setChosen("Popularity");
-                      setSelected(trending);
-                      setDropDown(!dropDown);
-                    }}
-                  >
-                    Popularity
-                  </li>
-                  <li
-                    onClick={() => {
-                      setChosen("Date");
-                      setSelected(airing);
-                      setDropDown(!dropDown);
-                    }}
-                  >
-                    Date
-                  </li>
-                  <li
-                    onClick={() => {
-                      setChosen("Rating");
-                      setSelected(rated);
-                      setDropDown(!dropDown);
-                    }}
-                  >
-                    Rating
-                  </li>
-                </ul>
-              </div>
-            ) : (
-              dropDown
-            )}
+            <div className={`dropdown options ${dropDown ? "active" : ""}`}>
+              <ul>
+                <li
+                  onClick={() => {
+                    setChosen("Popularity");
+                    setSelected(trending);
+                    setDropDown(!dropDown);
+                  }}
+                >
+                  Popularity
+                </li>
+                <li
+                  onClick={() => {
+                    setChosen("Date");
+                    setSelected(airing);
+                    setDropDown(!dropDown);
+                  }}
+                >
+                  Date
+                </li>
+                <li
+                  onClick={() => {
+                    setChosen("Rating");
+                    setSelected(rated);
+                    setDropDown(!dropDown);
+                  }}
+                >
+                  Rating
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
         <div className="grid container">

@@ -4,7 +4,6 @@ import {
   FETCH_RATED,
   FETCH_AIRING,
   FETCH_GENRES,
-  SET_TRANSPARENCY,
 } from "./types"; // By assigning the types constante names we avoid typos issues
 
 // This will handle all the fetch associated with the initial content on the showcase

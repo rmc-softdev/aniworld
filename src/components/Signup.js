@@ -15,7 +15,7 @@ const SignUp = () => {
           uniquely social way.
         </p>
         <div className="facebook">
-          <i class="fab fa-facebook-square"></i>
+          <i className="fab fa-facebook-square"></i>
           <div className="facebook-connect">
             <p>Continue with Facebook</p>
           </div>
@@ -40,7 +40,7 @@ const SignUp = () => {
           fully functional quite yet - perharps if I find the time in the
           future. This modal is based on a favorite App of mine. If you want to
           find out more about it, please refer to{" "}
-          <span className="signup-standout e-mail">rmcdev@gmail.com</span>
+          <span className="signup-standout e-mail">rmcsoftdev@gmail.com</span>
         </div>
       </div>
     </div>

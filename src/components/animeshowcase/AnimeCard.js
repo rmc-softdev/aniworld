@@ -1,21 +1,20 @@
 import React from "react";
 import "./AnimeCard.css";
 import { Link } from "react-router-dom";
-import { Image, Popup } from "semantic-ui-react";
+import { Popup } from "semantic-ui-react";
 import { connect } from "react-redux";
 import { fetchShowCaseContent } from "../../actions/fetchActions";
 
 const AnimeCard = ({ animeData, status }) => {
   const { attributes } = animeData;
   const image = attributes.posterImage.small;
-  console.log(attributes);
   const PopupInfo = () => (
     <Popup
       content={onHoverInfo()}
       trigger={
         <div>
           <div className="overlay-container">
-            <img src={`${image}`} />
+            <img src={`${image}`} alt="Anime Poster" />
             <div id="overlay"></div>
           </div>
           <button className="addLibrary"> Add to Library </button>
@@ -29,7 +28,9 @@ const AnimeCard = ({ animeData, status }) => {
   const onHoverInfo = () => {
     const title = attributes.titles.en || attributes.titles.en_jp;
     const startDate = attributes.startDate.split("-")[0];
-    const averageRating = `${attributes.averageRating}%`;
+    const averageRating = attributes.averageRating
+      ? `${attributes.averageRating}%`
+      : "Sorry, couldn't fetch this data.";
     const popularityRank = attributes.popularityRank;
     const ratingRank = attributes.ratingRank;
     const synopsis = attributes.synopsis;

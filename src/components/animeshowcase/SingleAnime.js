@@ -5,6 +5,7 @@ import "./SingleAnime.css";
 const SingleAnime = (props) => {
   const id = props.location.pathname.split("/")[2];
   const [singleAnimeData, setSingleAnimeData] = useState(null);
+
   //setSingleAnimeData(props.location.state.animeData) we can also use the current state if we need to!
   const renderContent = (props) => {
     if (singleAnimeData) {
@@ -82,6 +83,7 @@ const SingleAnime = (props) => {
             <div className="extras col">
               <div className="trailer">
                 <iframe
+                  title="youtube-vid"
                   style={{
                     position: "absolute",
                     top: 0,
@@ -131,23 +133,14 @@ const SingleAnime = (props) => {
     }
   };
 
-  // const [charactersId, setCharactersId] = useState([]);
-  // const [charactersData, setCharactersData] = useState("");
   useEffect(() => {
-    // const charLink = singleAnimeData?.relationships.characters.links.self;
-    /*
-    fetch(`https://kitsu.io/api/edge/${charLink}`)
-      .then((res) => res.json())
-      .then((newData) => {
-        setCharactersId(newData.data.slice(0, 8));
-      });
-  */
     fetch(`https://kitsu.io/api/edge/anime/${id}`)
       .then((res) => res.json())
       .then((newData) => {
         setSingleAnimeData(newData.data);
+        console.log(singleAnimeData?.relationships.characters.links.self);
       });
-  }, [id]);
+  }, [id, singleAnimeData]);
 
   return <>{renderContent(props)}</>;
 };
