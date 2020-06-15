@@ -27,13 +27,13 @@ const AnimeCard = ({ animeData, status }) => {
 
   const onHoverInfo = () => {
     const title = attributes.titles.en || attributes.titles.en_jp;
-    const startDate = attributes.startDate.split("-")[0];
+    const startDate = attributes?.startDate?.split("-")[0];
     const averageRating = attributes.averageRating
       ? `${attributes.averageRating}%`
       : "Sorry, couldn't fetch this data.";
-    const popularityRank = attributes.popularityRank;
-    const ratingRank = attributes.ratingRank;
-    const synopsis = attributes.synopsis;
+    const popularityRank = attributes?.popularityRank;
+    const ratingRank = attributes?.ratingRank;
+    const synopsis = attributes?.synopsis;
 
     return (
       <>

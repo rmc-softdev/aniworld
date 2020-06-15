@@ -7,7 +7,7 @@ import SignUp from "./SignUp";
 
 const Header = (props) => {
   //I'll use these to render features specific to certain pages, like the Single Anime component
-  const pageId = parseInt(props.location.pathname.split("/")[2]);
+  const pageId = parseInt(props?.location?.pathname?.split("/")[2]);
   const [navShow, setNavShow] = useState(false);
   let single;
 

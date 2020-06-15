@@ -14,20 +14,20 @@ const SingleAnime = (props) => {
       const title =
         singleAnimeData.attributes.titles.en ||
         singleAnimeData.attributes.titles.en_jp;
-      const startDate = singleAnimeData.attributes.startDate.split("-")[0];
-      const averageRating = singleAnimeData.attributes.averageRating;
-      const synopsis = singleAnimeData.attributes.synopsis;
-      const youtubeId = singleAnimeData.attributes.youtubeVideoId;
+      const startDate = singleAnimeData?.attributes?.startDate?.split("-")[0];
+      const averageRating = singleAnimeData?.attributes?.averageRating;
+      const synopsis = singleAnimeData?.attributes?.synopsis;
+      const youtubeId = singleAnimeData?.attributes?.youtubeVideoId;
 
       //anime extra details
 
-      const ageRating = singleAnimeData.attributes.ageRatingGuide;
-      const numberOfEpisodes = singleAnimeData.attributes.episodeCount;
+      const ageRating = singleAnimeData?.attributes?.ageRatingGuide;
+      const numberOfEpisodes = singleAnimeData?.attributes?.episodeCount;
       const aired = startDate; //need to refactor it to look at just the year;
-      const engTitle = singleAnimeData.attributes.titles.en;
-      const jpTitle = singleAnimeData.attributes.titles.en_jp;
-      const niponTitle = singleAnimeData.attributes.titles.ja_jp;
-      const status = singleAnimeData.attributes.status;
+      const engTitle = singleAnimeData?.attributes?.titles.en;
+      const jpTitle = singleAnimeData?.attributes?.titles.en_jp;
+      const niponTitle = singleAnimeData?.attributes?.titles?.ja_jp;
+      const status = singleAnimeData?.attributes?.status;
 
       return (
         <div className="global-container">

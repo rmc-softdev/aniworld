@@ -4,7 +4,7 @@ import AnimeSearch from "../search mechanism/AnimeSearch";
 import animeShowCase from "./animeShowCase";
 
 const ShowCaseCategory = (props) => {
-  const searched = props.location.pathname.split("/")[2];
+  const searched = props?.location?.pathname?.split("/")[2];
   const logo = `${searched} Anime`;
   const [trending, setTrending] = useState([]);
   const [mostPopular, setMostPopular] = useState([]);
