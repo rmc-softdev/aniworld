@@ -54,7 +54,7 @@ const Header = (props) => {
               style={{ display: "flex", alignItems: "center" }}
             >
               <img
-                src="https://i.ibb.co/BGKh5Sc/kitsu-logo-2.jpg"
+                src="https://i.ibb.co/n7ky4sF/kitsu.png"
                 alt=""
                 style={{
                   width: "52px",
