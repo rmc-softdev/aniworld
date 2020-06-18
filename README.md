@@ -3,6 +3,7 @@ This is a personal side project of mine, which is based on a anime community app
 
 ## Live demo at https://aniworld-mern.web.app/
 <img src="https://i.ibb.co/GswL4gn/index.png" width="600">
+<img src="https://i.ibb.co/GswL4gn/index.png" width="600">
 
 ## How to run it
 
