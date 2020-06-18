@@ -14,7 +14,7 @@ Simply type consecutively:
 
 ## Technical comments
 
-This project has lots of modern and advanced features, such as the hook system, a great deal of content managed with Redux, Higher Order Components to make it easy to reuse logic throughout the app. It also contains quite a good deal of complex design system, handled mostly by the new grid and flex system, even complex structures such as the the hovering effect is handled by these two powerful tools.
+This project has lots of modern and advanced features, such as the hook system, a great deal of content managed with Redux, Higher Order Components to make it easy to reuse logic throughout the app and much more. It also contains quite a good deal of complex design system, handled mostly by the new grid and flex system, even complex structures such as the the hovering effect is handled by these two powerful tools.
 
 ## Issues
 
