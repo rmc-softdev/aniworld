@@ -3,13 +3,13 @@ This is a personal side project of mine (made with React and Redux), which is ba
 
 ## Live demo at https://aniworld-mern.web.app/
 
-Home Page            |  Category Showcase
+Home Page            |  Single Anime
 :-------------------------:|:-------------------------:
-![](https://i.ibb.co/GswL4gn/index.png)  |  ![](https://i.ibb.co/HzhgQS2/categories.png)
+![](https://i.ibb.co/GswL4gn/index.png)  |  ![](https://i.ibb.co/Rvzvz8Q/each-anime.png) 
 
-Advanced Search            |  Anime Page
+Category Showcase        |  Advanced Search
 :-------------------------:|:-------------------------:
-![](https://i.ibb.co/hRZQWJn/advanced.png)  |  ![](https://i.ibb.co/Rvzvz8Q/each-anime.png)
+![](https://i.ibb.co/HzhgQS2/categories.png)  |  ![](https://i.ibb.co/hRZQWJn/advanced.png) 
 
 ## How to run it
 
