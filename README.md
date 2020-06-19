@@ -7,9 +7,9 @@ Home Page            |  Category Showcase
 :-------------------------:|:-------------------------:
 ![](https://i.ibb.co/GswL4gn/index.png)  |  ![](https://i.ibb.co/HzhgQS2/categories.png)
 
-Advanced Search            |  Sign Up
+Advanced Search            |  Anime Page
 :-------------------------:|:-------------------------:
-![](https://i.ibb.co/hRZQWJn/advanced.png)  |  ![](https://i.ibb.co/ggvG5cJ/sign-up.png)
+![](https://i.ibb.co/hRZQWJn/advanced.png)  |  ![](https://i.ibb.co/Rvzvz8Q/each-anime.png)
 
 ## How to run it
 
