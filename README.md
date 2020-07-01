@@ -1,11 +1,11 @@
 ## About this app
 This is a personal side project of mine (made with React and Redux), which is based on a anime community app (namely, Kitsu) I'm very fond of. It is designed to showcase the most recent and core React skills (as of 2020). I've also talked with the team behind it, they're planning to switch to React in the near future (2020), I'll likely contribute to its open source thereafter.
 
-## Live demo at https://aniworld-mern.web.app/
+## Live demo at aniworld.netlify.app/
 
 Home Page            |  Single Anime
 :-------------------------:|:-------------------------:
-![](https://i.ibb.co/GswL4gn/index.png)  |  ![](https://i.ibb.co/Rvzvz8Q/each-anime.png) 
+![](https://i.ibb.co/s6gn99B/index.png)  |  ![](https://i.ibb.co/Rvzvz8Q/each-anime.png) 
 
 Category Showcase        |  Advanced Search
 :-------------------------:|:-------------------------:
